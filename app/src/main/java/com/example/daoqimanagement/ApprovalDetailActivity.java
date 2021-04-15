@@ -121,6 +121,9 @@ public class ApprovalDetailActivity extends AppCompatActivity {
         getApprovalDetailRes(Api.URL+"/v1/approval/detail?approvalId="+String.valueOf(approvalId));
 
 
+        Log.d("approvaldetail", String.valueOf(approvalId));
+        Log.d("approvaldetail", GetSharePerfenceSP.getToken(this));
+        Log.d("approvaldetail", GetSharePerfenceSP.getUid(this));
 
 
 
@@ -357,6 +360,8 @@ public class ApprovalDetailActivity extends AppCompatActivity {
                                                     approvalVerifyPostPass( String.valueOf(approvalId),"2",opinion);
                                                 }else if (approvalDetailResponse.getData().getType() == 2){
                                                     if (GetSharePerfenceSP.getType(ApprovalDetailActivity.this).equals("4")){
+//                                                        Log.d("approvaldetail", String.valueOf(approvalId));
+//                                                        Log.d("approvaldetail", String.valueOf(opinion));
                                                         approvalPostAccountPass(String.valueOf(approvalId),"2",opinion);
                                                     }else if (GetSharePerfenceSP.getType(ApprovalDetailActivity.this).equals("5")){
                                                         if (approvalDetailResponse.getData().getProtectTime() != 0){
@@ -681,7 +686,8 @@ public class ApprovalDetailActivity extends AppCompatActivity {
 
 
 //        String url = (ApiConfig.BASE_URl+ApiConfig.LOGIN);
-        String url = Api.URL + "/v1/approval/accounting";
+        String url = Api.URL + "/v1/delay/accounting";
+
         postResApprovalVerifyPass(url, map);
 
 
@@ -722,6 +728,7 @@ public class ApprovalDetailActivity extends AppCompatActivity {
         JSONObject jsonObject = new JSONObject(params);
         String jsonStr = jsonObject.toString();
 
+
         RequestBody requestBodyJson = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), jsonStr);
 
         Request request = new Request.Builder()
@@ -758,14 +765,16 @@ public class ApprovalDetailActivity extends AppCompatActivity {
                 final String res = response.body().string();
                 L.e(res);
 
+
+
+                Gson gson = new Gson();
+
+                final ApprovalOpinionResponse approvalOpinionResponse = gson.fromJson(res, ApprovalOpinionResponse.class);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
 //                        L.e(res);
 
-                        Gson gson = new Gson();
-
-                        ApprovalOpinionResponse approvalOpinionResponse = gson.fromJson(res, ApprovalOpinionResponse.class);
 
                         if (approvalOpinionResponse.getCode() == 0) {
 
@@ -834,7 +843,7 @@ public class ApprovalDetailActivity extends AppCompatActivity {
 
 
 //        String url = (ApiConfig.BASE_URl+ApiConfig.LOGIN);
-        String url = Api.URL + "/v1/approval/accounting";
+        String url = Api.URL + "/v1/delay/accounting";
         postResApprovalVerifyNoPass(url, map);
 
 

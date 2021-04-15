@@ -1,9 +1,11 @@
 package com.example.daoqimanagement.bean;
 
+
 public class ApprovalOpinionResponse {
+
     @Override
     public String toString() {
-        return "AddPrepareResponse{" +
+        return "ApprovalOpinionResponse{" +
                 "code=" + code +
                 ", data='" + data + '\'' +
                 ", msg='" + msg + '\'' +
@@ -15,7 +17,6 @@ public class ApprovalOpinionResponse {
      * data : 操作成功
      * msg : ok
      */
-
 
 
     private int code;
