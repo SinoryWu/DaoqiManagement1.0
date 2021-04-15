@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="37dp"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/contact_item_tv_name"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="7.5dp"
+        android:text="张三"
+        android:textColor="#ff4c5264"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/contact_item_tv_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13512341234"
+        android:textColor="#ff4c5264"
+        android:textSize="14sp"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="7.5dp"
+     />
+
+
+    <TextView
+        android:id="@+id/contact_item_tv_department"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="睡眠科"
+        android:textColor="#ff4c5264"
+        android:textSize="14sp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="7.5dp"
+        />
+
+    <TextView
+        android:id="@+id/contact_item_tv_position"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="主任"
+        android:textColor="#ff4c5264"
+        android:textSize="14sp"
+        android:layout_marginLeft="296dp"
+        android:layout_marginTop="7.5dp"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/contact_item_rl_callPhone"
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp">
+        <ImageView
+
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/mentors_fragment_approval_call_phone_icon"/>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@+id/contact_item_tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="8.5dp"/>
+
+</RelativeLayout>

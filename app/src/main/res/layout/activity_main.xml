@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/upload_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上传" />
+    <TextView
+        android:id="@+id/upload_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/upload_bt"
+        android:gravity="center"
+        android:text="显示文本"
+        android:textSize="18sp" />
+    <ImageView
+        android:id="@+id/upload_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/upload_tv"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background" />
+
+    <Button
+        android:id="@+id/save_token_uid_usertype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存token和uid和usertype"
+        android:textAllCaps="false"
+        android:layout_marginTop="300dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-21dp">
+        <RelativeLayout
+            android:id="@+id/person_fragment_user_tab"
+            android:layout_width="match_parent"
+            android:layout_height="176dp"
+            android:background="@drawable/person_tab_background">
+
+            <TextView
+                android:id="@+id/person_fragment_tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text=""
+                android:textColor="#ffffffff"
+                android:textSize="22sp"
+                android:layout_marginTop="58dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/person_fragment_tv_user_type"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:text=""
+                android:textColor="#ffffffff"
+                android:textSize="17sp"
+                android:layout_marginTop="86dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+
+        <com.android.library.YLCircleImageView
+            android:id="@+id/person_fragment_iv_user_portrait"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:src="@mipmap/person_fragment_user_portrait_icon"
+            app:borderColorYL="#ffffff"
+            app:borderWidthYL="3dp"
+            app:radiusYL="9dp"
+            app:scaleTypeYL="center"
+            android:layout_marginTop="140dp"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:id="@+id/person_fragment_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:layout_below="@+id/person_fragment_user_tab">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="29dp"
+                android:src="@mipmap/person_fragment_identity_icon"
+                android:layout_marginTop="57dp"
+                android:layout_marginLeft="85dp"/>
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="29dp"
+                android:src="@mipmap/person_fragment_hospital_icon"
+                android:layout_marginTop="57dp"
+                android:layout_marginLeft="189dp"/>
+
+            <ImageView
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:src="@mipmap/person_fragment_contract_icon"
+                android:layout_marginTop="57dp"
+                android:layout_marginLeft="309dp"/>
+
+            <TextView
+                android:id="@+id/person_fragment_tv_identify"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:text="身份："
+                android:textColor="#ff8a56ac"
+                android:textSize="13sp"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="57dp"/>
+
+            <TextView
+                android:id="@+id/person_fragment_tv_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:text="报备医院："
+                android:textColor="#ff8a56ac"
+                android:textSize="13sp"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="169dp"/>
+
+            <TextView
+                android:id="@+id/person_fragment_tv_contract"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:text="合同："
+                android:textColor="#ff8a56ac"
+                android:textSize="13sp"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="300dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/person_fragment_user_info"
+            android:background="#fffafafa"
+            android:layout_marginTop="2dp" >
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@mipmap/person_fragment_pencil_icon"
+                android:layout_marginTop="37dp"
+                android:layout_marginLeft="43dp"/>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="21dp"
+                android:src="@mipmap/person_fragment_password_icon"
+                android:layout_marginTop="101dp"
+                android:layout_marginLeft="43dp"/>
+
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="15dp"
+                android:src="@mipmap/person_fragment_payment_icon"
+                android:layout_marginTop="174dp"
+                android:layout_marginLeft="43dp"/>
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@mipmap/person_fragment_sign_out_icon"
+                android:layout_marginTop="237dp"
+                android:layout_marginLeft="43dp"/>
+
+            <TextView
+                android:id="@+id/person_fragment_tv_modify_information"
+                android:layout_width="200dp"
+                android:layout_height="54dp"
+                android:text="修改基本信息"
+                android:textColor="#ff4c5264"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="40dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginLeft="45dp"/>
+
+
+            <TextView
+                android:id="@+id/person_fragment_tv_modify_password"
+                android:layout_width="200dp"
+                android:layout_height="54dp"
+                android:text="修改密码"
+                android:textColor="#ff4c5264"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="40dp"
+                android:layout_marginTop="87dp"
+                android:layout_marginLeft="45dp"/>
+
+            <TextView
+                android:id="@+id/person_fragment_tv_account_statement"
+                android:layout_width="200dp"
+                android:layout_height="54dp"
+                android:text="我的对账单"
+                android:textColor="#ff4c5264"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="40dp"
+                android:layout_marginTop="154dp"
+                android:layout_marginLeft="45dp"/>
+
+            <TextView
+                android:id="@+id/person_fragment_tv_sign_out"
+                android:layout_width="200dp"
+                android:layout_height="54dp"
+                android:text="退出登录"
+                android:textColor="#ff4c5264"
+                android:textSize="17sp"
+                android:gravity="center_vertical"
+                android:paddingLeft="40dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginLeft="45dp"/>
+
+            <View
+                android:id="@+id/person_fragment_bottom_line"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+   
+
+
+</RelativeLayout>

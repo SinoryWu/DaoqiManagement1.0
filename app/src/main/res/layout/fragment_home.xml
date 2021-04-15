@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:background="@drawable/fragment_home_top_tab_background">
+
+        <Button
+            android:id="@+id/fragment_home_tab_btn_all"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:text="全部"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/fragment_home_tab_btn_hospital"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="107dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:text="医院"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/fragment_home_tab_btn_progress"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="205dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:text="进度"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/fragment_home_tab_btn_bill"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="298dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:text="账单"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_home_rl_all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="暂未开放"
+            android:textColor="#999999"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_home_rl_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_hospital_rl_hospital_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fragment_home_hospital_rl_add_button"
+            android:background="#fff6f6f6">
+
+            <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+                android:id="@+id/fragment_home_rc_hospital_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_hospital_rl_hospital_list_gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fragment_home_hospital_rl_add_button"
+            android:background="#fff6f6f6"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="财务无报备列表"
+                android:textSize="17sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_hospital_rl_add_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/fragment_home_btn_add_report_background">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="145dp"
+                android:src="@mipmap/fragment_home_hospital_btn_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="176dp"
+                android:text="新增预报备"
+                android:textColor="#ffffffff"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/fragment_home_rl_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff6f6f6"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fragment_home_rl_progress_add_button"
+            android:orientation="vertical">
+
+            <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+                android:id="@+id/fragment_home_rc_progress_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/fragment_home_rl_progress_add_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/fragment_home_btn_add_report_background">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="145dp"
+                android:src="@mipmap/fragment_home_hospital_btn_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="182dp"
+                android:text="更新进度"
+                android:textColor="#ffffffff"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_home_rl_bill"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="暂未开放"
+            android:textColor="#999999"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

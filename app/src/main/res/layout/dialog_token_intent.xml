@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="170dp"
+    android:background="@drawable/token_dialog_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_token_title"
+        android:text="提示"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:textSize="25sp"
+        android:gravity="left"
+        android:textColor="#000000"
+        android:layout_marginTop="22dp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+
+        android:id="@+id/tv_token_message"
+        android:text="您好，您的登陆信息已过期，请重新登陆!"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:textSize="18sp"
+        android:gravity="left"
+        android:textColor="#000000"
+        android:layout_marginTop="22dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="#C4C4C4"
+        />
+
+    <TextView
+
+        android:id="@+id/tv_token_confirm"
+        android:text="确认"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="#000000"
+
+         />
+
+
+
+
+
+</LinearLayout>

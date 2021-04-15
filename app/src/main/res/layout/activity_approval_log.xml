@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApprovalLogActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff6f6f6"
+        android:layout_marginTop="-21dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:id="@+id/approval_log_rl_finish"
+                android:layout_width="70dp"
+                android:layout_height="58dp"
+                android:gravity="center"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="20dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="18dp"
+                    android:src="@mipmap/arrow_left_black_icon"/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:text="流程日志"
+                android:textColor="#ff4c5264"
+                android:textSize="17sp"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/approval_log_rc_log_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

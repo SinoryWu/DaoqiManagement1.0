@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F2B4D"
+    tools:context=".EcologyCompleteInformationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-21dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/ecology_info_ll_arrowleft"
+                    android:layout_width="87dp"
+                    android:layout_height="63dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="21dp">
+                    <ImageView
+                        android:layout_width="21dp"
+                        android:layout_height="19dp"
+                        android:src="@mipmap/arrow_left_white_icon" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="54dp"
+                    android:text="补全信息"
+                    android:textColor="#ffffffff"
+                    android:textSize="39sp"
+                    android:layout_marginTop="141dp"
+                    android:layout_marginLeft="33dp"/>
+
+
+                <TextView
+                    android:layout_width="52dp"
+                    android:layout_height="18dp"
+                    android:text="企业名称"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="288dp"/>
+                <LinearLayout
+                    android:id="@+id/ecology_info_ll_enterprise"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="280dp"
+                    android:layout_marginLeft="353dp">
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@mipmap/ecology_info_icon"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/ecology_info_et_enterprise"
+                    android:layout_width="310dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="304dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:textCursorDrawable="@null"/>
+                <View
+                    android:layout_width="346dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="332dp"
+                    android:background="#60FFFFFF"/>
+
+                <TextView
+                    android:layout_width="104dp"
+                    android:layout_height="18dp"
+                    android:text="统一社会信用代码"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginTop="360dp"
+                    android:layout_marginLeft="33dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ecology_info_ll_credit"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="352dp"
+                    android:layout_marginLeft="353dp">
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@mipmap/ecology_info_icon"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/ecology_info_et_credit"
+                    android:layout_width="310dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="376dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:textCursorDrawable="@null"/>
+
+                <View
+                    android:layout_width="346dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="405dp"
+                    android:background="#60FFFFFF"/>
+
+                <TextView
+                    android:layout_width="39dp"
+                    android:layout_height="18dp"
+                    android:text="开户行"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="433dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ecology_info_ll_bank"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="424dp"
+                    android:layout_marginLeft="353dp">
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@mipmap/ecology_info_icon"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/ecology_info_et_bank"
+                    android:layout_width="310dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="450dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:textCursorDrawable="@null"/>
+
+                <View
+                    android:layout_width="346dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="477dp"
+                    android:background="#60FFFFFF"/>
+
+                <TextView
+                    android:layout_width="52dp"
+                    android:layout_height="18dp"
+                    android:text="开户账号"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="505dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ecology_info_ll_bank_number"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="496dp"
+                    android:layout_marginLeft="353dp">
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@mipmap/ecology_info_icon"/>
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/ecology_info_et_bank_number"
+                    android:layout_width="310dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="521dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number"
+                    android:textCursorDrawable="@null"/>
+                <View
+                    android:layout_width="346dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="549dp"
+                    android:background="#60FFFFFF"/>
+
+                <TextView
+                    android:layout_width="52dp"
+                    android:layout_height="18dp"
+                    android:text="营业执照"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="578dp"/>
+                <RelativeLayout
+                    android:layout_width="347dp"
+                    android:layout_height="165dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="603dp"
+                    android:background="@drawable/ecology_info_camera_background">
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/ecology_info_iv_photo_true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:id="@+id/ecology_info_ll_camera"
+                        android:layout_width="347dp"
+                        android:layout_height="165dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/ecology_info_iv_photo_false"
+                            android:layout_width="52dp"
+                            android:layout_height="39dp"
+                            android:src="@mipmap/photography_icon"
+                            android:layout_marginTop="53dp"
+                            android:layout_marginLeft="147.5dp"/>
+                        <TextView
+                            android:id="@+id/ecology_info_tv_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="14dp"
+                            android:text="上传《营业执照》"
+                            android:textColor="#ff4c5264"
+                            android:textSize="10sp"
+                            android:layout_marginTop="17dp"
+                            android:layout_marginLeft="133.5dp"/>
+                    </LinearLayout>
+
+
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/ecology_info_tv_photo_again"
+                    android:layout_width="78dp"
+                    android:layout_height="36dp"
+                    android:text="点击重新上传"
+                    android:textColor="#ff8a56ac"
+                    android:textSize="13sp"
+                    android:layout_marginTop="563dp"
+                    android:layout_marginLeft="301dp"
+                    android:paddingTop="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="法人代表身份证/授权委托书"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="796dp"/>
+
+                <TextView
+                    android:id="@+id/ecology_info_tv_photo_again_entrust"
+                    android:layout_width="78dp"
+                    android:layout_height="36dp"
+                    android:text="点击重新上传"
+                    android:textColor="#ff8a56ac"
+                    android:textSize="13sp"
+                    android:layout_marginTop="781dp"
+                    android:layout_marginLeft="301dp"
+                    android:paddingTop="15dp"/>
+
+                <RelativeLayout
+                    android:layout_width="347dp"
+                    android:layout_height="165dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="821dp"
+
+
+                    android:background="@drawable/ecology_info_camera_background">
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/ecology_info_iv_photo_true_entrust"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:id="@+id/ecology_info_ll_camera_entrust"
+                        android:layout_width="347dp"
+                        android:layout_height="165dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/ecology_info_iv_photo_false_entrust"
+                            android:layout_width="52dp"
+                            android:layout_height="39dp"
+                            android:src="@mipmap/photography_icon"
+                            android:layout_marginTop="53dp"
+                            android:layout_marginLeft="147.5dp"/>
+                        <TextView
+                            android:id="@+id/ecology_info_tv_photo_entrust1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="上传《授权委托书》"
+                            android:textColor="#ff4c5264"
+                            android:textSize="10sp"
+                            android:layout_marginTop="17dp"
+                            android:layout_gravity="center_horizontal"/>
+                        <TextView
+                            android:id="@+id/ecology_info_tv_photo_entrust2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*如注册人为法人代表，请上传法人代表身份证正面"
+                            android:textColor="#ff4c5264"
+                            android:textSize="10sp"
+                            android:layout_gravity="center_horizontal"/>
+                    </LinearLayout>
+
+
+
+
+                </RelativeLayout>
+                <Button
+                    android:id="@+id/ecology_info_btn_submit"
+                    android:layout_width="346dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="1033dp"
+                    android:layout_marginLeft="33dp"
+                    android:background="@drawable/ecology_info_btn_background"
+                    android:text="提交"
+                    android:textSize="15sp"
+                    android:textColor="#8A56AC"/>
+
+                <TextView
+                    android:id="@+id/ecology_info_tv_toast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:text="遇到问题？请联系400-6899-570"
+                    android:textColor="#80ffffff"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="1100dp"/>
+                <View
+                    android:id="@+id/ecology_info_bottom_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_below="@+id/ecology_info_tv_toast"/>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

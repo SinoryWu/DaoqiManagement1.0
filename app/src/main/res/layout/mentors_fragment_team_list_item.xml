@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/mentors_fragment_team_list_rl_item"
+        android:layout_width="match_parent"
+        android:layout_height="99dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/mentors_fragment_team_list_iv_user_list_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="32dp"/>
+
+        <TextView
+            android:id="@+id/mentors_fragment_team_list_tv_user_true_name"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:text="李佳"
+            android:textColor="#ff4c5264"
+            android:textSize="22sp"
+            android:layout_marginLeft="121dp"
+           android:layout_marginTop="29dp"/>
+
+        <TextView
+            android:id="@+id/mentors_fragment_team_list_tv_user_position"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:text="合伙人管理员"
+            android:textColor="#ff4c5264"
+            android:textSize="15sp"
+            android:layout_marginTop="57dp"
+            android:layout_marginLeft="121dp"/>
+        
+        <RelativeLayout
+            android:id="@+id/mentors_fragment_team_list_rl_call_phone"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_marginLeft="346dp"
+            android:layout_marginTop="23dp">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/mentors_fragment_approval_call_phone_icon" />
+        </RelativeLayout>
+        
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="11dp"
+        android:background="#F6F6F6"
+        android:layout_below="@+id/mentors_fragment_team_list_rl_item"/>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="346dp"
+    android:layout_height="252dp"
+   android:background="@drawable/dialog_feed_back_background">
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="延长保护期"
+            android:textColor="#ff8a56ac"
+            android:textSize="25sp"
+            android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/dialog_delay_protect_tv_oneMonth"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="#BCC5D3"
+        android:background="@drawable/delay_protect_btn_left_backgound_false"
+        android:text="一个月"
+        android:layout_marginTop="82dp"
+        android:layout_marginLeft="40dp"/>
+
+    <TextView
+        android:id="@+id/dialog_delay_protect_tv_threeMonth"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="#BCC5D3"
+        android:background="@drawable/delay_protect_btn_left_backgound_false"
+        android:text="三个月"
+        android:layout_marginTop="82dp"
+        android:layout_toRightOf="@+id/dialog_delay_protect_tv_oneMonth"/>
+
+    <TextView
+        android:id="@+id/dialog_delay_protect_tv_sixMonth"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="#BCC5D3"
+        android:background="@drawable/delay_protect_btn_left_backgound_false"
+        android:text="六个月"
+        android:layout_marginTop="82dp"
+        android:layout_toRightOf="@+id/dialog_delay_protect_tv_threeMonth"/>
+    
+    <Button
+        android:id="@+id/dialog_delay_protect_btn_confirm"
+        android:layout_width="133dp"
+        android:layout_height="55dp"
+        android:background="@drawable/dialog_feed_back_btn_left_background"
+        android:text="提交"
+        android:textSize="13sp"
+        android:textColor="#8A56AC"
+        android:layout_marginTop="156dp"
+        android:layout_marginLeft="41dp"/>
+    <Button
+        android:id="@+id/dialog_delay_protect_btn_cancel"
+        android:layout_width="133dp"
+        android:layout_height="55dp"
+        android:background="@drawable/dialog_feed_back_btn_right_background"
+        android:text="取消"
+        android:textSize="13sp"
+        android:textColor="#4C5264"
+        android:layout_marginTop="156dp"
+        android:layout_marginLeft="174dp"/>
+
+
+
+
+</RelativeLayout>

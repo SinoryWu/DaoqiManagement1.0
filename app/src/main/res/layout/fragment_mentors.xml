@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:background="@drawable/fragment_home_top_tab_background">
+
+        <Button
+            android:id="@+id/fragment_mentors_tab_btn_team"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:text="团队"
+            android:textSize="17sp"
+            android:textColor="#A6BCD0"/>
+
+        <Button
+            android:id="@+id/fragment_mentors_tab_btn_resources"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="107dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:text="资源"
+            android:textSize="17sp"
+            android:textColor="#A6BCD0"/>
+
+        <Button
+            android:id="@+id/fragment_home_tab_btn_progress"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="205dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/fragment_home_tab_btn_bill"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="298dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:textSize="17sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_mentors_rl_team_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6">
+
+        <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+            android:id="@+id/fragment_mentors_rc_team_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_mentors_rl_resources_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6">
+
+        <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+            android:id="@+id/fragment_mentors_rc_resources_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

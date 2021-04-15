@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F2B4D"
+    tools:context=".PayJoinExamineActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-21dp">
+        <LinearLayout
+            android:id="@+id/pay_join_examine_ll_arrowleft"
+            android:layout_width="87dp"
+            android:layout_height="63dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="21dp">
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="19dp"
+                android:src="@mipmap/arrow_left_white_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:text="已上传凭证"
+            android:textColor="#ffffffff"
+            android:textSize="39sp"
+            android:layout_marginTop="141dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="请等待审核，预计2小时内完成"
+            android:textColor="#ffffffff"
+            android:textSize="17sp"
+            android:layout_marginTop="218dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:text="遇到问题？请联系400-6899-570"
+            android:textColor="#80ffffff"
+            android:textSize="15sp"
+            android:layout_marginTop="274dp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

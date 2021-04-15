@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".AddPrepareActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-21dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/add_prepare_rl_finish"
+                    android:layout_width="70dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/arrow_left_black_icon" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="37dp"
+                    android:text="新增预报备"
+                    android:textColor="#ff4c5264"
+                    android:textSize="17sp" />
+
+                <RelativeLayout
+                    android:id="@+id/add_prepare_rl_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="127dp"
+                    android:layout_marginTop="81dp"
+                    android:background="@drawable/add_prepare_tab_background">
+
+
+                    <TextView
+                        android:id="@+id/add_prepare_tv_hospital_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginTop="26dp"
+
+                        android:textColor="#ffffffff"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/add_prepare_tv_hospital_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginTop="49dp"
+
+                        android:textColor="#80ffffff"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/add_prepare_tv_hospital_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginTop="80dp"
+
+                        android:textColor="#f6f6f6"
+                        android:textSize="13sp" />
+
+                    <com.android.library.YLCircleImageView
+                        android:id="@+id/add_prepare_hospital_headpic"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="339dp"
+                        android:layout_marginTop="30dp"
+                        android:background="#ffffff"
+                        android:src="@mipmap/add_prepare_hospital_icon"
+                        app:borderColorYL="#ffffff"
+                        app:borderSpaceYL="-1dp"
+                        app:borderWidthYL="3dp"
+                        app:scaleTypeYL="center" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/add_prepare_rl_tab">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="28dp"
+                        android:text="选择开发方式"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/add_prepare_tv_choice_product"
+                        android:layout_width="346dp"
+                        android:layout_height="28dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="43dp"
+                        android:text="请选择"
+                        android:textColor="#ff8a56ac"
+                        android:textSize="17sp" />
+
+                    <ImageView
+                        android:id="@+id/add_prepare_iv_choice_product"
+                        android:layout_width="11dp"
+                        android:layout_height="6dp"
+                        android:layout_marginLeft="369dp"
+                        android:layout_marginTop="52dp"
+                        android:src="@mipmap/login_arrow_right_down_icon" />
+
+                    <View
+                        android:layout_width="346dp"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="73dp"
+                        android:background="#E2E8ED" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="100dp"
+                        android:text="该医院当前预报备人数"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/add_prepare_tv_people_num"
+                        android:layout_width="27dp"
+                        android:layout_height="24dp"
+                        android:textColor="#ff4c5264"
+                        android:textSize="17sp"
+                        android:layout_marginTop="116dp"
+                        android:layout_marginLeft="33dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="144dp"
+                        android:background="#E2E8ED" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="159dp"
+                        android:text="预报备科室"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/add_prepare_et_department"
+                        android:layout_width="346dp"
+                        android:layout_height="28dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="173dp"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:gravity="center_vertical"
+                        android:hint="请输入"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="#4C5264"
+                        android:textColorHint="#8A56AC"
+                        android:textCursorDrawable="@null"
+                        android:textSize="17sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="203dp"
+                        android:background="#E2E8ED" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="231dp"
+                        android:text="报备理由"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/add_prepare_et_reason"
+                        android:layout_width="346dp"
+                        android:layout_height="28dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="245dp"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:gravity="center_vertical"
+                        android:hint="请输入"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="#4C5264"
+                        android:textColorHint="#8A56AC"
+                        android:textCursorDrawable="@null"
+                        android:textSize="17sp" />
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="275dp"
+                        android:background="#E2E8ED" />
+
+                    <TextView
+                        android:id="@+id/add_prepare_tv_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:text="关键联系人"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="302dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_below="@+id/add_prepare_tv_contact"
+                        android:id="@+id/add_prepare_rc_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="0dp"/>
+
+                    <RelativeLayout
+                        android:layout_below="@+id/add_prepare_rc_contact"
+                        android:id="@+id/add_prepare_rl_contact"
+                        android:layout_width="137dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="27dp"
+                        android:layout_centerHorizontal="true">
+                        
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/add_contact_icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:text="添加联系人"
+                            android:textColor="#ffffffff"
+                            android:textSize="14sp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="47dp"/>
+                        
+                    </RelativeLayout>
+
+
+
+
+                    <TextView
+                        android:layout_below="@+id/add_prepare_rl_contact"
+                        android:id="@+id/add_prepare_tv_introduce1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="29dp"
+                        android:text="产品介绍："
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_below="@+id/add_prepare_tv_introduce1"
+                        android:id="@+id/add_prepare_tv_introduce"
+                        android:layout_width="346dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginTop="12dp"
+                        android:maxHeight="168dp"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_below="@+id/add_prepare_tv_introduce"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/add_prepare_rl_report_add_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/fragment_home_btn_add_report_background">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/add_prepare_confirm_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="142dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:text="提交预报备"
+                android:textColor="#ffffffff"
+                android:textSize="12sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="174dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+    
+</RelativeLayout>

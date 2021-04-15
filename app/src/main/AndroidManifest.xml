@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.daoqimanagement">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".utils.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".SearchPrepareListActivity" /> <!-- 若您的业务中有使用极光富媒体功能，或者极光早上好功能，需要把此 Activity 的 exported 修改成 true 覆盖 jcenter 上的组件。 -->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:exported="true"
+            android:theme="@style/MyDialogStyle"
+            tools:node="replace">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="cn.jpush.android.ui.PopWinActivity" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity> <!-- 若您的业务中有使用极光富媒体功能，或者极光早上好功能，需要把此 Activity 的 exported 修改成 true 覆盖 jcenter 上的组件。 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoTitleBar"
+            tools:node="replace">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.daoqimanagement.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".UserInterFaceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PayJoinExamineActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PayEarnestMoneyActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".StarFireCompleteInformationActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".PayJoinActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".EcologyCompleteInformationActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".LoginActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AddPrepareActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ChoiceHospitalActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SearchHospitalListActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PrepareDetailForUserActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".UpDateProgressActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".CheckPhotoActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:theme="@style/CheckPhotoTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".CheckPhotoUrlActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:theme="@style/CheckPhotoTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ProgressDetailActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".HospitalDetailActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PartnerDetailActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PartnerTeamActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SearchPartnerActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".NoticeDetailActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ApprovalDetailActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ApprovalLogActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ResourceDetailActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ResourceDetailWebActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".MainActivity" /> <!-- 屏幕适配 -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="412" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="870" />
+    </application>
+
+</manifest>

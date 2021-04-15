@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PartnerDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        android:layout_marginTop="-21dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="327dp"
+                    android:background="#FFFFFF">
+                    <RelativeLayout
+                        android:id="@+id/partner_detail_rl_finish"
+                        android:layout_width="70dp"
+                        android:layout_height="58dp"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:src="@mipmap/arrow_left_black_icon" />
+                    </RelativeLayout>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/partner_detail_iv_head_pic"
+                        android:layout_width="141dp"
+                        android:layout_height="141dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="84dp"
+                        android:src="@mipmap/partner_detail_head_icon"/>
+
+                    <TextView
+                        android:id="@+id/partner_detail_tv_truename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+
+                        android:textColor="#ff241332"
+                        android:textSize="30sp"
+                        android:layout_marginTop="242dp"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/partner_detail_tv_usertype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+
+                        android:textColor="#ff998fa2"
+                        android:textSize="15sp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="35dp"/>
+
+                    <TextView
+                        android:id="@+id/partner_detail_tv_createTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+
+                        android:textColor="#ff998fa2"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="60dp"/>
+
+
+                    <Button
+                        android:id="@+id/partner_detail_btn_call"
+                        android:layout_width="106dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/partner_detail_call_phone_background"
+                        android:text="电话"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginLeft="271dp"
+                        android:layout_marginTop="40dp"/>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/partner_detail_cv"
+                        android:layout_width="376dp"
+                        android:layout_height="132dp"
+                        android:layout_marginTop="110dp"
+                        android:layout_centerHorizontal="true"
+                        app:cardCornerRadius="40dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:id="@+id/partner_detail_rl_service_team"
+                                android:layout_width="64dp"
+                                android:layout_height="68dp"
+                                android:layout_marginTop="33dp"
+                                android:layout_marginLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:gravity="center_horizontal">
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="18dp"
+                                    android:src="@mipmap/partner_detail_service_team_icon"/>
+
+                            </RelativeLayout>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:text="服务团队"
+                                android:textColor="#ff78849e"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="44dp"
+                                android:layout_marginTop="75dp"
+                                />
+                            
+                            <RelativeLayout
+                                android:id="@+id/partner_detail_rl_edit_information"
+                                android:layout_width="58dp"
+                                android:layout_height="68dp"
+                                android:layout_marginTop="33dp"
+                                android:layout_marginLeft="158dp"
+                                android:paddingTop="7dp"
+                                android:gravity="center_horizontal">
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@mipmap/partner_detail_edit_information_icon"/>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:text="编辑信息"
+                                android:textColor="#ff78849e"
+                                android:textSize="14sp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="75dp"/>
+
+                            <RelativeLayout
+                                android:id="@+id/partner_detail_rl_contract_management"
+                                android:layout_width="58dp"
+                                android:layout_height="68dp"
+                                android:layout_marginTop="33dp"
+                                android:layout_marginLeft="272dp"
+                                android:paddingTop="7dp"
+                                android:gravity="center_horizontal">
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@mipmap/partner_detail_contract_management_icon"/>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:text="合同管理"
+                                android:textColor="#ff78849e"
+                                android:textSize="14sp"
+                                android:layout_marginTop="75dp"
+                                android:layout_marginLeft="274dp"/>
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                    
+                    <View
+                        android:id="@+id/partner_detail_cv_line"
+                        android:layout_below="@+id/partner_detail_cv"
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/partner_detail_rc_prepare_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="0dp"
+                        android:layout_below="@+id/partner_detail_cv_line"/>
+
+                    <View
+
+                        android:layout_below="@+id/partner_detail_rc_prepare_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"/>
+
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

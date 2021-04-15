@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HospitalDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_marginTop="-21dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                    android:id="@+id/hospital_detail_rl_finish"
+                    android:layout_width="70dp"
+                    android:layout_height="58dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="20dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/arrow_left_black_icon"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:text="医院详情"
+                    android:textColor="#ff4c5264"
+                    android:textSize="17sp"
+                    android:layout_marginTop="37dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <ImageView
+                    android:id="@+id/hospital_detail_iv_headpic"
+                    android:layout_width="39dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="90dp"
+                    android:layout_marginLeft="33dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="医院全称"
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="98dp"
+                    android:layout_marginTop="84dp"/>
+                <TextView
+                    android:id="@+id/hospital_detail_tv_hospitalName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+
+                    android:textColor="#ff4c5264"
+                    android:textSize="17sp"
+                    android:layout_marginTop="104dp"
+                    android:layout_marginLeft="97dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8ED"
+                    android:layout_marginTop="154dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="医院类型"
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginTop="180dp"
+                    android:layout_marginLeft="34dp"/>
+
+                <TextView
+                    android:id="@+id/hospital_detail_tv_nature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+
+                    android:textColor="#ff4c5264"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="198dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8ED"
+                    android:layout_marginTop="246dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="医院级别"
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="272dp"/>
+                <TextView
+                    android:id="@+id/hospital_detail_tv_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+
+                    android:textColor="#ff4c5264"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="289dp"/>
+                <View
+                    android:id="@+id/hospital_detail_last_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E8ED"
+                    android:layout_marginTop="339dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/hospital_detail_last_line">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:text="医院地址"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="34dp"/>
+
+                    <TextView
+                        android:id="@+id/hospital_detail_tv_areaName"
+                        android:layout_width="345dp"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#ff4c5264"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="34dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E2E8ED"
+                        android:layout_marginTop="47dp"/>
+
+                    <TextView
+                        android:layout_width="52dp"
+                        android:layout_height="18dp"
+                        android:text="合作状态"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginLeft="34dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/hospital_detail_rc_cooperate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="0dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="13dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:text="主要联系人信息"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginLeft="34dp"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/hospital_detail_rc_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="0dp"
+                        android:layout_marginTop="6dp"/>
+
+                    <TextView
+                        android:id="@+id/hospital_detail_tv_addcontact"
+                        android:layout_width="66dp"
+                        android:layout_height="38dp"
+                        android:text="添加"
+                        android:textColor="#ff8a56ac"
+                        android:textSize="17sp"
+                        android:gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="19dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="26dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:text="医院简介"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginTop="25dp"/>
+
+                    <TextView
+                        android:id="@+id/hospital_detail_tv_detail"
+                        android:layout_width="345dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ff4c5264"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E2E8ED"
+                        android:layout_marginTop="51dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:text="备注："
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="13sp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginLeft="34dp"/>
+
+                    <TextView
+                        android:id="@+id/hospital_detail_tv_remarks"
+                        android:layout_width="345dp"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="#ff4c5264"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        />
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

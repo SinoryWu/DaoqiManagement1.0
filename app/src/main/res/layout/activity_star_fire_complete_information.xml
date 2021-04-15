@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F2B4D"
+    tools:context=".StarFireCompleteInformationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-21dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/starfire_info_ll_arrowleft"
+                    android:layout_width="87dp"
+                    android:layout_height="63dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="21dp">
+                    <ImageView
+                        android:layout_width="21dp"
+                        android:layout_height="19dp"
+                        android:src="@mipmap/arrow_left_white_icon" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="54dp"
+                    android:text="补全信息"
+                    android:textColor="#ffffffff"
+                    android:textSize="39sp"
+                    android:layout_marginTop="141dp"
+                    android:layout_marginLeft="33dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="身份证号码"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="288dp"/>
+                <LinearLayout
+                    android:id="@+id/starfire_info_ll_id_number"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="280dp"
+                    android:layout_marginLeft="353dp">
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@mipmap/ecology_info_icon"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/starfire_info_et_id_number"
+                    android:layout_width="310dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="304dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:textCursorDrawable="@null"
+                    android:inputType="textCapCharacters"/>
+                <View
+                    android:layout_width="346dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="332dp"
+                    android:background="#60FFFFFF"/>
+
+                <TextView
+                    android:layout_width="73dp"
+                    android:layout_height="18dp"
+                    android:text="身份证-正面"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginTop="360dp"
+                    android:layout_marginLeft="33dp"/>
+
+                <TextView
+                    android:id="@+id/starfire_info_tv_front_again"
+                    android:layout_width="78dp"
+                    android:layout_height="36dp"
+                    android:text="点击重新上传"
+                    android:textColor="#ff8a56ac"
+                    android:textSize="13sp"
+                    android:layout_marginTop="345dp"
+                    android:layout_marginLeft="301dp"
+                    android:paddingTop="15dp"/>
+
+
+                <RelativeLayout
+                    android:layout_width="347dp"
+                    android:layout_height="165dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="386dp">
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/starfire_info_iv_photo_id_front_true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"/>
+                    <LinearLayout
+                        android:id="@+id/starfire_info_ll_camera_id_front"
+                        android:layout_width="347dp"
+                        android:layout_height="165dp"
+                        android:orientation="vertical"
+
+                        android:background="@drawable/ecology_info_camera_background">
+
+                        <ImageView
+                            android:id="@+id/starfire_info_iv_photo_id_front_false"
+                            android:layout_width="52dp"
+                            android:layout_height="39dp"
+                            android:src="@mipmap/photography_icon"
+                            android:layout_marginTop="53dp"
+                            android:layout_marginLeft="147.5dp"/>
+                        <TextView
+                            android:id="@+id/starfire_info_tv_photo_id_front"
+                            android:layout_width="wrap_content"
+                            android:layout_height="14dp"
+                            android:text="上传正面"
+                            android:textColor="#ff4c5264"
+                            android:textSize="10sp"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginLeft="153.5dp"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+
+                <TextView
+                    android:layout_width="73dp"
+                    android:layout_height="18dp"
+                    android:text="身份证-反面"
+                    android:textColor="#80ffffff"
+                    android:textSize="13sp"
+                    android:layout_marginTop="578dp"
+                    android:layout_marginLeft="33dp"/>
+
+                <TextView
+                    android:id="@+id/starfire_info_tv_reverse_again"
+                    android:layout_width="78dp"
+                    android:layout_height="36dp"
+                    android:text="点击重新上传"
+                    android:textColor="#ff8a56ac"
+                    android:textSize="13sp"
+                    android:layout_marginTop="565dp"
+                    android:layout_marginLeft="301dp"
+                    android:paddingTop="15dp"/>
+
+                <RelativeLayout
+                    android:layout_width="347dp"
+                    android:layout_height="165dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="603dp">
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/starfire_info_iv_photo_id_reverse_true"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"/>
+                    <LinearLayout
+                        android:id="@+id/starfire_info_ll_camera_id_reverse"
+                        android:layout_width="347dp"
+                        android:layout_height="165dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/ecology_info_camera_background">
+
+                        <ImageView
+                            android:id="@+id/starfire_info_iv_photo_id_reverse_false"
+                            android:layout_width="52dp"
+                            android:layout_height="39dp"
+                            android:src="@mipmap/photography_icon"
+                            android:layout_marginTop="53dp"
+                            android:layout_marginLeft="147.5dp"/>
+                        <TextView
+                            android:id="@+id/ecology_info_tv_photo_id_reverse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="14dp"
+                            android:text="上传反面"
+                            android:textColor="#ff4c5264"
+                            android:textSize="10sp"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginLeft="153.5dp"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <Button
+                    android:id="@+id/starfire_info_btn_submit"
+                    android:layout_width="346dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="823dp"
+                    android:layout_marginLeft="33dp"
+                    android:background="@drawable/ecology_info_btn_background"
+                    android:text="提交"
+                    android:textSize="15sp"
+                    android:textColor="#8A56AC"
+                    />
+
+                <TextView
+                    android:id="@+id/starfire_info_tv_toast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:text="遇到问题？请联系400-6899-570"
+                    android:textColor="#80ffffff"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="900dp"/>
+                <View
+                    android:id="@+id/starfire_info_bottom_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_below="@+id/starfire_info_tv_toast"/>
+            </RelativeLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

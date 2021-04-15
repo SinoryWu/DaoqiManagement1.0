@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/progress_detail_comment_item_tv_createTime"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+
+            android:textColor="#ffbcc5d3"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:id="@+id/progress_detail_comment_item_tv_truename"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:textColor="#ffbcc5d3"
+            android:textSize="13sp"
+
+           android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/progress_detail_comment_item_tv_comment"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ff4c5264"
+        android:textSize="14sp"
+        />
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/progress_detail_comment_item_rc_picture"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginTop="15dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/progress_detail_comment_item_rc_appendix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"/>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+    
+
+</LinearLayout>

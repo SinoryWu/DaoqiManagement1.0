@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ProgressDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-21dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/progress_detail_rl_finish"
+                    android:layout_width="70dp"
+                    android:layout_height="58dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="20dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/arrow_left_black_icon"/>
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:text="进度详情"
+                    android:textColor="#ff4c5264"
+                    android:textSize="17sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="37dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="127dp"
+                    android:layout_marginTop="81dp"
+                    android:background="@drawable/person_tab_background">
+
+                    <TextView
+                        android:id="@+id/progress_detail_tv_hospitalName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="17sp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginLeft="34dp"/>
+
+                    <TextView
+                        android:id="@+id/progress_detail_tv_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:textColor="#80ffffff"
+                        android:textSize="15sp"
+                        android:layout_marginTop="49dp"
+                        android:layout_marginLeft="34dp"/>
+
+                    <TextView
+                        android:id="@+id/progress_detail_tv_areaName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+
+                        android:textColor="#80ffffff"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginTop="80dp"/>
+
+                    <TextView
+                        android:id="@+id/progress_detail_tv_nature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:textColor="#95ffffff"
+                        android:textSize="17sp"
+                        android:layout_marginLeft="346dp"
+                        android:layout_marginTop="26dp"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="开发进度"
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginTop="236dp"
+                    android:layout_marginLeft="33dp"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_createTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="273dp"
+                    android:minHeight="0dp"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_truename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginTop="273dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="33dp"
+                    android:gravity="right"
+                    android:minHeight="0dp"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_desc"
+                    android:layout_width="346dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:textColor="#4C5264"
+                    android:textSize="14sp"
+                    android:layout_marginTop="306dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_remarks1"
+                    android:layout_width="39dp"
+                    android:layout_height="18dp"
+                    android:text="备注："
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_below="@+id/progress_detail_tv_desc"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginLeft="33dp"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_remarks"
+                    android:layout_width="346dp"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="#ff4c5264"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/progress_detail_tv_remarks1"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="14dp"
+                    android:minHeight="0dp"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_needHelp1"
+                    android:layout_below="@+id/progress_detail_tv_remarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="需要协助："
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="13dp"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_needHelp"
+                    android:layout_below="@+id/progress_detail_tv_needHelp1"
+                    android:layout_width="346dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff4c5264"
+                    android:textSize="14sp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginLeft="33dp"
+                    android:minHeight="0dp"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_pictures1"
+                    android:layout_width="39dp"
+                    android:layout_height="18dp"
+                    android:text="附件："
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_below="@+id/progress_detail_tv_needHelp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/progress_detail_rc_pictures"
+                    android:layout_width="347dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/progress_detail_tv_pictures1"
+                    android:layout_marginTop="14dp"
+                    android:layout_centerHorizontal="true"
+                    android:minHeight="0dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/progress_detail_rc_appendixs"
+                    android:layout_below="@+id/progress_detail_rc_pictures"
+                    android:layout_width="347dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:minHeight="0dp"/>
+
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_comment"
+                    android:layout_below="@+id/progress_detail_rc_appendixs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="评论"
+                    android:textColor="#ff000000"
+                    android:textSize="13sp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginLeft="33dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/progress_detail_rc_comment"
+                    android:layout_width="346dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/progress_detail_tv_comment"/>
+
+                <TextView
+                    android:id="@+id/progress_detail_tv_comment1"
+                    android:layout_below="@+id/progress_detail_rc_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="添加评论："
+                    android:textColor="#ff4c5264"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="7dp"/>
+                
+                <EditText
+                    android:id="@+id/progress_detail_et_comment"
+                    android:layout_below="@+id/progress_detail_tv_comment1"
+                    android:layout_width="346dp"
+                    android:layout_height="88dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/update_progress_et_remarks"
+                    android:layout_centerHorizontal="true"
+                    android:hint="请输入"
+                    android:textSize="15sp"
+                    android:textColor="#4C5264"
+                    android:gravity="top"
+                    android:maxLength="200"
+                    android:padding="11dp"/>
+
+
+
+                <TextView
+                    android:layout_below="@+id/progress_detail_et_comment"
+                    android:id="@+id/progress_detail_tv_add_picture1"
+                    android:layout_width="65dp"
+                    android:layout_height="18dp"
+                    android:text="添加图片："
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="29dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@+id/progress_detail_tv_add_picture1"
+                    android:id="@+id/progress_detail_rc_addPic"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="33dp"
+                    android:layout_width="wrap_content"
+                    android:minWidth="0dp"
+                    android:layout_height="78dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/progress_detail_rl_addPic"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/progress_detail_tv_add_picture1"
+                    android:layout_toRightOf="@+id/progress_detail_rc_addPic"
+                    android:background="#F6F6F6">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@mipmap/add_icon"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/progress_detail_progress_rl_addPic"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/progress_detail_tv_add_picture1"
+                    android:layout_toRightOf="@+id/progress_detail_rc_addPic"
+                    android:background="#F6F6F6">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@mipmap/add_icon"/>
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/progress_detail_rl_add_file1"
+                    android:layout_below="@+id/progress_detail_rl_addPic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="添加附件："
+                    android:textColor="#ffbcc5d3"
+                    android:textSize="13sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="33dp"/>
+
+                <RelativeLayout
+                    android:layout_below="@+id/progress_detail_rl_add_file1"
+                    android:id="@+id/progress_detail_rl_addFile"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:layout_marginLeft="33dp"
+                    android:gravity="center"
+                    android:background="#F6F6F6">
+
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@mipmap/add_icon"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/progress_detail_rl_add_file1"
+                    android:id="@+id/progress_detail_rl_addFile_none"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="66dp"
+                    android:layout_marginLeft="33dp"
+                    android:gravity="center"
+                    android:background="#FFFFFF"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:text="最多添加三个附件,可删除重新选择附件。"
+                        android:gravity="center"
+                        android:textColor="#BCC5D3"
+                        />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@+id/progress_detail_rl_addFile"
+                    android:id="@+id/progress_detail_rc_addFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:minHeight="0dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <Button
+                    android:id="@+id/progress_detail_btn_submit"
+                    android:layout_below="@+id/progress_detail_rc_addFile"
+                    android:layout_width="132dp"
+                    android:layout_height="55dp"
+                    android:text="提交"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:layout_marginTop="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/progress_detail_btn_background"/>
+                
+                <View
+                    android:layout_below="@+id/progress_detail_btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"/>
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+        <View
+            android:id="@+id/progress_detail_bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"/>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

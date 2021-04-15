@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/home_fragment_hos_list_rl_item"
+        android:layout_width="match_parent"
+        android:layout_height="107dp">
+        <ImageView
+            android:id="@+id/home_fragment_iv_hospital_list_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"/>
+
+        <TextView
+            android:id="@+id/home_fragment_tv_hospital_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text=""
+            android:textColor="#ff4c5264"
+            android:textSize="18sp"
+            android:layout_marginLeft="109dp"
+            android:layout_marginTop="27dp"/>
+
+        <TextView
+            android:id="@+id/home_fragment_tv_hospital_list_truename"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:text=""
+            android:textColor="#ff4c5264"
+            android:textSize="12sp"
+            android:layout_marginLeft="109dp"
+            android:layout_marginTop="52dp"/>
+
+        <TextView
+            android:id="@+id/home_fragment_tv_hospital_list_protect_time"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:text=""
+            android:textColor="#ff4c5264"
+            android:textSize="12sp"
+            android:layout_marginLeft="109dp"
+            android:layout_marginTop="68dp"/>
+        
+        <ImageView
+            android:layout_width="5dp"
+            android:layout_height="10dp"
+            android:src="@mipmap/arrow_right_black_icon"
+            android:layout_marginLeft="341dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E2E8ED"
+        android:layout_below="@+id/home_fragment_hos_list_rl_item"/>
+
+
+
+
+</RelativeLayout>

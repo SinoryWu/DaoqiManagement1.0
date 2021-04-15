@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/resource_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:textColor="#ffbcc5d3"
+        android:textSize="13sp"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="33dp"/>
+
+
+    <TextView
+        android:id="@+id/resource_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:textColor="#ff4c5264"
+        android:textSize="15sp"
+        android:layout_marginTop="64dp"
+        android:layout_marginLeft="33dp"/>
+    <TextView
+        android:id="@+id/resource_item_desc"
+        android:layout_width="346dp"
+        android:layout_height="47dp"
+        android:textColor="#ff000000"
+        android:textSize="14sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="99dp"/>
+
+    <TextView
+        android:id="@+id/resource_item_readNum"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:textColor="#ffbcc5d3"
+        android:textSize="13sp"
+        android:layout_marginTop="154dp"
+        android:layout_marginLeft="33dp"/>
+
+    <TextView
+        android:layout_width="52dp"
+        android:layout_height="18dp"
+        android:text="查看更多"
+        android:textColor="#ffbcc5d3"
+        android:textSize="13sp"
+        android:layout_marginLeft="329dp"
+        android:layout_marginTop="154dp"/>
+
+    <View
+        android:layout_below="@+id/resource_item_readNum"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#F6F6F6"
+        android:layout_marginTop="12dp"/>
+
+</RelativeLayout>

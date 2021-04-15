@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F6F6"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/popwindow_tv_starfire"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="星火合伙人"
+            android:paddingLeft="39dp"
+            android:textSize="15sp"
+            android:textColor="#4C5264"
+            android:gravity="center_vertical"
+            android:background="@drawable/login_press_teamchange"/>
+
+
+        <TextView
+            android:id="@+id/popwindow_tv_ecology"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="生态链合伙人"
+            android:paddingLeft="39dp"
+            android:textSize="15sp"
+            android:textColor="#4C5264"
+            android:gravity="center_vertical"
+            android:background="@drawable/login_press_teamchange"/>
+
+        <TextView
+            android:id="@+id/popwindow_tv_manufacturer"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="直营团队"
+            android:paddingLeft="39dp"
+            android:textSize="15sp"
+            android:textColor="#4C5264"
+            android:gravity="center_vertical"
+            android:background="@drawable/login_press_teamchange"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

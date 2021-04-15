@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="346dp"
+    android:layout_height="252dp"
+   android:background="@drawable/dialog_feed_back_background">
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="是否退出登陆?"
+            android:textColor="#ff8a56ac"
+            android:textSize="25sp"
+            android:layout_marginTop="32dp"/>
+
+    
+    <Button
+        android:id="@+id/dialog_login_out_btn_confirm"
+        android:layout_width="133dp"
+        android:layout_height="55dp"
+        android:background="@drawable/login_out_left_backgrond"
+        android:text="是的"
+        android:textSize="13sp"
+        android:textColor="#ff8a56ac"
+        android:layout_marginTop="156dp"
+        android:layout_marginLeft="41dp"/>
+    <Button
+        android:id="@+id/dialog_login_out_btn_cancel"
+        android:layout_width="133dp"
+        android:layout_height="55dp"
+        android:background="@drawable/login_out_right_background"
+        android:text="不"
+        android:textSize="13sp"
+        android:textColor="#ff8a56ac"
+        android:layout_marginTop="156dp"
+        android:layout_marginLeft="174dp"/>
+
+
+
+
+</RelativeLayout>

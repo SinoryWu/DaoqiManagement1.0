@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="346dp"
+    android:layout_height="252dp"
+   android:background="@drawable/dialog_feed_back_background">
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="修改状态"
+            android:textColor="#ff8a56ac"
+            android:textSize="25sp"
+            android:layout_marginTop="32dp"/>
+    <TextView
+        android:id="@+id/dialog_modify_status_tv_content"
+        android:layout_width="265dp"
+        android:layout_height="44dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="82dp"
+        android:background="@drawable/dialog_et_feed_back_background"
+        android:textSize="15sp"
+        android:paddingLeft="10dp"
+        android:text="取消报备"
+        android:textColor="#4C5264"
+        android:gravity="center_vertical"/>
+    
+    <Button
+        android:id="@+id/dialog_modify_status_btn_confirm"
+        android:layout_width="133dp"
+        android:layout_height="55dp"
+        android:background="@drawable/dialog_feed_back_btn_left_background"
+        android:text="提交"
+        android:textSize="13sp"
+        android:textColor="#8A56AC"
+        android:layout_marginTop="156dp"
+        android:layout_marginLeft="41dp"/>
+    <Button
+        android:id="@+id/dialog_modify_status_btn_cancel"
+        android:layout_width="133dp"
+        android:layout_height="55dp"
+        android:background="@drawable/dialog_feed_back_btn_right_background"
+        android:text="取消"
+        android:textSize="13sp"
+        android:textColor="#4C5264"
+        android:layout_marginTop="156dp"
+        android:layout_marginLeft="174dp"/>
+    <ImageView
+        android:id="@+id/dialog_modify_status_iv_modify"
+        android:layout_width="10dp"
+        android:layout_height="5dp"
+        android:src="@mipmap/login_arrow_right_down_icon"
+        android:layout_marginLeft="279dp"
+        android:layout_marginTop="101dp"/>
+
+
+
+
+</RelativeLayout>

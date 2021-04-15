@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F6F6">
+
+    <ImageView
+        android:id="@+id/approval_log_item_iv_status"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginLeft="33dp"/>
+    <View
+        android:id="@+id/approval_log_item_head_view"
+        android:layout_width="1dp"
+        android:layout_height="38dp"
+        android:background="#E2E8ED"
+        android:layout_marginLeft="41dp"/>
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="312dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="67dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="26dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="审批节点"
+                android:textColor="#ff000000"
+                android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/approval_log_item_tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="75dp"/>
+
+            <TextView
+                android:id="@+id/approval_log_item_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+
+                android:textColor="#ff8a56ac"
+                android:textSize="17sp"
+                android:layout_marginTop="36dp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/approval_log_item_tv_opinion"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+
+                android:textColor="#ff4c5264"
+                android:textSize="14sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="67dp"/>
+
+            <TextView
+                android:id="@+id/approval_log_item_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+
+                android:textColor="#ffbcc5d3"
+                android:textSize="12sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="95dp"
+                android:gravity="right"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="93dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="54dp"
+        android:background="#E2E8ED"/>
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:background="@drawable/fragment_home_top_tab_background">
+
+        <Button
+            android:id="@+id/fragment_approval_tab_btn_approval"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:text="审批"
+            android:textSize="17sp"
+            android:textColor="#A6BCD0"/>
+
+        <Button
+            android:id="@+id/fragment_approval_tab_btn_notice"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="107dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:text="通知"
+            android:textSize="17sp"
+            android:textColor="#A6BCD0"/>
+
+        <Button
+            android:id="@+id/fragment_home_tab_btn_progress"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="205dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/fragment_home_tab_btn_bill"
+            android:layout_width="103dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="298dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/fragment_home_tab_button_background_normal"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_approval_rl_approval_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        android:visibility="visible">
+        <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+            android:id="@+id/fragment_approval_rc_approval_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/fragment_approval_rl_approval_list_gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="非管理员用户不可使用审批功能"
+            android:layout_centerInParent="true"
+            android:textColor="#999999"
+            android:textSize="17sp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_approval_rl_notice_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6">
+        <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
+            android:id="@+id/fragment_approval_rc_notice_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            />
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

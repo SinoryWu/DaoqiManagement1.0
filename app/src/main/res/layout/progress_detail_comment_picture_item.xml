@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="66dp">
+
+    <ImageView
+        android:id="@+id/progress_detail_picture_item_iv_pic"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="#F6F6F6"
+        android:scaleType="centerCrop"/>
+
+    <View
+        android:layout_width="22dp"
+        android:layout_height="66dp"
+        android:layout_toRightOf="@+id/progress_detail_picture_item_iv_pic"/>
+    
+    <RelativeLayout
+        android:id="@+id/progress_detail_picture_item_rl_pic_failed"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:gravity="center"
+        android:background="#F6F6F6"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="27dp"
+            android:src="@mipmap/picture_failed_icon"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp">
+
+
+        <TextView
+            android:id="@+id/approval_fragment_tv_progress_list_create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+
+            android:textColor="#BCC5D3"
+            android:textSize="13sp"
+            android:layout_marginLeft="33dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/approval_fragment_tv_approval_list_status"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+
+            android:textSize="13sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="33dp"/>
+
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="132dp">
+
+        <TextView
+            android:id="@+id/approval_fragment_tv_approval_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+
+            android:textColor="#ff4c5264"
+            android:textSize="15sp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/approval_fragment_tv_approval_list_truename"
+            android:layout_width="105dp"
+            android:layout_height="21dp"
+
+            android:textColor="#ff4c5264"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="12dp"/>
+
+
+            <TextView
+                android:id="@+id/approval_fragment_tv_approval_list_reason"
+                android:layout_width="346dp"
+                android:layout_height="48dp"
+                android:textColor="#80000000"
+                android:textSize="14sp"
+                android:layout_marginTop="48dp"
+                android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/approval_fragment_tv_approval_list_check"
+            android:layout_marginTop="102dp"
+            android:layout_marginLeft="355dp"
+            android:layout_width="26dp"
+            android:layout_height="18dp"
+            android:text="查看"
+            android:textColor="#ffbcc5d3"
+            android:textSize="13sp"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#E2E8ED"
+       />
+
+
+
+
+</LinearLayout>

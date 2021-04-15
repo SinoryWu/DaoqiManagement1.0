@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F6F6">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/partner_prepare_item_cv_item"
+        android:layout_width="377dp"
+        android:layout_height="132dp"
+        app:cardCornerRadius="40dp"
+        android:layout_centerHorizontal="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/partner_prepare_item_iv_headPic"
+                android:layout_width="44dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/home_fragment_hospital_list_icon"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="36dp"/>
+
+
+            <TextView
+                android:id="@+id/partner_prepare_item_tv_hospitalName"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+
+                android:textColor="#ff241332"
+                android:textSize="17sp"
+                android:layout_marginLeft="97dp"
+                android:layout_marginTop="34dp"/>
+
+            <TextView
+                android:id="@+id/partner_prepare_item_tv_protectTime"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+
+                android:textColor="#80352641"
+                android:textSize="13sp"
+                android:layout_marginTop="57dp"
+                android:layout_marginLeft="97dp"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/arrow_right_grey_icon"
+                android:layout_marginLeft="315dp"
+                android:layout_marginTop="38dp"/>
+
+            <TextView
+                android:id="@+id/partner_prepare_item_tv_scheduleNum"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+
+                android:textColor="#ffbcc5d3"
+                android:textSize="13sp"
+                android:layout_marginTop="96dp"
+                android:layout_marginLeft="269dp"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_below="@+id/partner_prepare_item_cv_item"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"/>
+
+
+</RelativeLayout>

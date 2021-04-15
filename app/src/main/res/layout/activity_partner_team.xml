@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PartnerTeamActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_marginTop="-21dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:id="@+id/partner_team_rl_finish"
+                    android:layout_width="70dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/arrow_left_black_icon" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:text="服务团队"
+                    android:textColor="#ff4c5264"
+                    android:textSize="17sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/partner_team_iv_head_pic"
+                    android:layout_width="141dp"
+                    android:layout_height="141dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="84dp"
+                    android:src="@mipmap/partner_detail_head_icon"/>
+                <TextView
+                    android:id="@+id/partner_team_tv_trueName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:text="荔枝蜜"
+                    android:textColor="#ff241332"
+                    android:textSize="30sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="246dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/partner_team_rl_search"
+                    android:layout_width="347dp"
+                    android:layout_height="44dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="353dp"
+                    android:background="@drawable/partenr_team_search_background"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:text="请输入"
+                        android:textColor="#ffbcc5d3"
+                        android:textSize="17sp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="11dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:text="搜索"
+                        android:textColor="#ff8a56ac"
+                        android:textSize="17sp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="11dp"/>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/partner_team_view_search"
+                    android:layout_below="@+id/partner_team_rl_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/partner_team_rc_team_list"
+                    android:layout_below="@+id/partner_team_view_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"/>
+
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
