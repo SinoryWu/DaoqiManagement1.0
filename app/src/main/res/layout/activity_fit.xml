@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".FitActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-21dp">
+
+        <RelativeLayout
+            android:id="@+id/fit_rl_finish"
+            android:layout_width="70dp"
+            android:layout_height="58dp"
+            android:gravity="center"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/arrow_left_black_icon"/>
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="21dp"
+            android:src="@mipmap/clean_icon"
+            android:layout_marginTop="102dp"
+            android:layout_marginLeft="65dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:text="设置"
+            android:textColor="#ff4c5264"
+            android:textSize="17sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/fit_tv_delete_cache"
+            android:layout_width="200dp"
+            android:layout_height="54dp"
+            android:text="清除缓存"
+            android:textColor="#ff4c5264"
+            android:textSize="17sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:layout_marginTop="87dp"
+            android:layout_marginLeft="65dp"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
