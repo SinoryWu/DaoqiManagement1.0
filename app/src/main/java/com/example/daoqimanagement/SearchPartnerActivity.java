@@ -54,6 +54,12 @@ public class SearchPartnerActivity extends AppCompatActivity {
     String uid = "21312";
 
     String chars;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

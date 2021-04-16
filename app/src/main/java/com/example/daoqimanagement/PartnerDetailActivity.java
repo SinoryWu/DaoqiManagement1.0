@@ -54,7 +54,11 @@ public class PartnerDetailActivity extends AppCompatActivity {
     DialogTokenIntent dialogTokenIntent = null;
     String phoneNumber,trueName,headPic,createTime;
     int userType,uid;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

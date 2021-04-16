@@ -159,7 +159,11 @@ public class ProgressDetailActivity extends AppCompatActivity {
 
     Bitmap bitmapCamera,bitmapChoose;
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

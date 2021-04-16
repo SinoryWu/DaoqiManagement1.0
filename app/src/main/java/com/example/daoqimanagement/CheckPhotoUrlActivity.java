@@ -17,7 +17,11 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 public class CheckPhotoUrlActivity extends AppCompatActivity {
 
     private PhotoView photoView;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

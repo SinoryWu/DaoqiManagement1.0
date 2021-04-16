@@ -28,6 +28,7 @@ import com.example.daoqimanagement.adapter.MentorFragmentAdminTeamListAdapter;
 import com.example.daoqimanagement.adapter.NoticeListAdapter;
 import com.example.daoqimanagement.bean.ApprovalListResponse;
 import com.example.daoqimanagement.bean.MentorsFragmentAdminTeamListResponse;
+import com.example.daoqimanagement.bean.NoticeDetailResponse;
 import com.example.daoqimanagement.bean.NoticeListResponse;
 import com.example.daoqimanagement.dialog.DialogTokenIntent;
 import com.example.daoqimanagement.utils.ActivityCollector;
@@ -35,6 +36,7 @@ import com.example.daoqimanagement.utils.Api;
 import com.example.daoqimanagement.utils.GetSharePerfenceSP;
 import com.example.daoqimanagement.utils.L;
 import com.example.daoqimanagement.utils.ToastUtils;
+import com.google.gson.Gson;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 
 import org.jetbrains.annotations.NotNull;
@@ -65,7 +67,7 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
     ApprovalListAdapter approvalListAdapter;
     NoticeListAdapter noticeListAdapter;
     DialogTokenIntent dialogTokenIntent = null;
-
+    Intent intent;
 
     @Nullable
     @Override
@@ -74,6 +76,8 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
         initView(view);
         return view;
     }
+
+
 
     public void initView(View view) {
         mBtnApproval = view.findViewById(R.id.fragment_approval_tab_btn_approval);
@@ -91,7 +95,7 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
         mRlApprovalListGone.setVisibility(View.GONE);
         mRlNoticeList.setVisibility(View.GONE);
         mBtnApproval.performClick();
-
+        intent = new Intent(getContext(), NoticeDetailActivity.class);
     }
 
     @Override
@@ -100,12 +104,16 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
 
         if (getRefreshToSp("refresh","").length() >0 || getRefreshToSp("refresh","")!= null || !TextUtils.isEmpty(getRefreshToSp("refresh",""))){
             String refresh = getRefreshToSp("refresh","");
-            if (GetSharePerfenceSP.getUserType(getContext()).equals("2")){
-                if (refresh.equals("refreshApprovalList")){
+            if (refresh.equals("refreshNoticeList")){
+                noticeDataBeans.clear();
+                getResNoticeList(Api.URL+"/v1/notice/list");
+            }else if (refresh.equals("refreshApprovalList")){
+                if (GetSharePerfenceSP.getUserType(getContext()).equals("2")){
                     approvalDataBeans.clear();
                     getResApprovalList(Api.URL+"/v1/approval/list");
                 }
             }
+
 
         }
     }
@@ -118,6 +126,7 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
                 mBtnNotice.setBackgroundResource(R.drawable.fragment_home_tab_button_background_normal);
                 mBtnApproval.setTextColor(Color.parseColor("#FFFFFF"));
                 mBtnNotice.setTextColor(Color.parseColor("#A6BCD0"));
+                approvalDataBeans.clear();
                 if (GetSharePerfenceSP.getUserType(getContext()).equals("1")){
                     mRlApprovalList.setVisibility(View.GONE);
                     mRlApprovalListGone.setVisibility(View.VISIBLE);
@@ -682,7 +691,7 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
                 L.e("OnResponse");
                 final String res = response.body().string();
                 Log.d("TAG", res);
-
+                cleanRefreshToSp("refresh","");
                 final NoticeListResponse noticeListResponse = new NoticeListResponse();
 
                 try {
@@ -789,12 +798,20 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
                             mRcNoticeList.setAdapter(noticeListAdapter);
                             noticeListAdapter.setOnItemClickListener(new NoticeListAdapter.OnItemClickListener() {
                                 @Override
-                                public void onItemClick(String createTime, String title, String content) {
-                                    Intent intent = new Intent(getContext(), NoticeDetailActivity.class);
-                                    intent.putExtra("createTime",createTime);
-                                    intent.putExtra("title",title);
-                                    intent.putExtra("content",content);
-                                    startActivity(intent);
+                                public void onItemClick(String createTime, String title, String content,int isRead,int noticeId) {
+                                    if (isRead == 2){
+
+                                        intent.putExtra("createTime",createTime);
+                                        intent.putExtra("title",title);
+                                        intent.putExtra("content",content);
+                                        startActivity(intent);
+                                    }else if (isRead == 1){
+                                        intent.putExtra("createTime",createTime);
+                                        intent.putExtra("title",title);
+                                        intent.putExtra("content",content);
+                                        getResNoticeDetail(Api.URL+"/v1/notice/detail?noticeId="+String.valueOf(noticeId));
+                                    }
+
                                 }
                             });
                             mRcNoticeList.setOnPullLoadMoreListener(new PullLoadMoreRecyclerView.PullLoadMoreListener() {
@@ -1026,7 +1043,7 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
                 L.e("OnResponse");
                 final String res = response.body().string();
                 Log.d("TAG", res);
-
+                cleanRefreshToSp("refresh","");
                 final NoticeListResponse noticeListResponse = new NoticeListResponse();
 
                 try {
@@ -1153,6 +1170,72 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
     }
 
 
+    public void getResNoticeDetail(String url) {
+//        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(url)//网络请求的网址
+                .get()//默认是GET请求，可省略，也可以写其他的
+                .addHeader("token",getTokenToSp("token",""))
+                .addHeader("uid",getUidToSp("uid",""))
+//                .addHeader("token", "30267f97bb1aeb1e2ddca1cda79d92b5")
+//                .addHeader("uid", "8")
+                .build();
+        Call call = Api.ok().newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                L.e("OnFailure   " + e.getMessage());
+                e.printStackTrace();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ToastUtils.showTextToast2(getContext(), "网络请求失败");
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                L.e("OnResponse");
+                final String res = response.body().string();
+                Log.d("TAG", res);
+
+                final NoticeDetailResponse noticeDetailResponse = new Gson().fromJson(res, NoticeDetailResponse.class);
+
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        if (noticeDetailResponse.getCode() == 0) {
+                            saveStringToSp("refresh","refreshNoticeList");
+                            startActivity(intent);
+                        } else if (noticeDetailResponse.getCode() == 10009) {
+                            if (dialogTokenIntent == null) {
+                                dialogTokenIntent = new DialogTokenIntent(getContext(), R.style.CustomDialog);
+                                dialogTokenIntent.setTitle("提示").setMessage("您好，您的登陆信息已过期，请重新登陆!").setConfirm("确认", new DialogTokenIntent.IOnConfirmListener() {
+                                    @Override
+                                    public void OnConfirm(DialogTokenIntent dialog) {
+                                        Intent intent = new Intent(getContext(), LoginActivity.class);
+                                        ActivityCollector.finishAll();
+                                        startActivity(intent);
+
+                                    }
+                                }).show();
+
+                                dialogTokenIntent.setCanceledOnTouchOutside(false);
+                                dialogTokenIntent.setCancelable(false);
+                            }
+                        } else {
+                            ToastUtils.showTextToast2(getContext(), noticeDetailResponse.getMsg());
+                        }
+                    }
+                });
+
+
+            }
+        });
+    }
+
 
     public String getTokenToSp(String key, String val) {
         SharedPreferences sp = getContext().getSharedPreferences("token_uid_usertype", MODE_PRIVATE);
@@ -1181,5 +1264,12 @@ public class ApprovalFragment extends Fragment implements View.OnClickListener {
     public void cleanRefreshToSp(String key, String val){
         SharedPreferences sp = getActivity().getSharedPreferences("refresh", MODE_PRIVATE);
         sp.edit().clear().commit();
+    }
+
+    protected void saveStringToSp(String key, String val) {
+        SharedPreferences sp = getActivity().getSharedPreferences("refresh", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(key, val);
+        editor.commit();
     }
 }

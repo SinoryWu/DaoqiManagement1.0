@@ -14,11 +14,11 @@
         android:name=".utils.MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/daoqi_icon"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/daoqi_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -65,7 +65,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/FragmentTheme"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -92,7 +96,7 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/LoginTheme"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".PayJoinActivity"
             android:hardwareAccelerated="true"
@@ -224,12 +228,21 @@
             android:screenOrientation="portrait"
             android:theme="@style/FragmentTheme"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".ResourceDetailWebActivity"
+        <activity
+            android:name=".ResourceDetailWebActivity"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/FragmentTheme"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".FitActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FragmentTheme"
+            android:windowSoftInputMode="stateHidden" >
+
+        </activity>
         <activity android:name=".MainActivity" /> <!-- 屏幕适配 -->
         <meta-data
             android:name="design_width_in_dp"

@@ -40,7 +40,11 @@ public class ApprovalLogActivity extends AppCompatActivity {
     private RecyclerView mRcLogList;
     ApprovalLogAdapter approvalLogAdapter;
     DialogTokenIntent dialogTokenIntent = null;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

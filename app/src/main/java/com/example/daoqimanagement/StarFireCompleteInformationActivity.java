@@ -59,6 +59,7 @@ import com.example.daoqimanagement.utils.ActivityCollectorLogin;
 import com.example.daoqimanagement.utils.AllCapTransformationMethod;
 import com.example.daoqimanagement.utils.Api;
 import com.example.daoqimanagement.utils.OnMultiClickListener;
+import com.example.daoqimanagement.utils.PersonIdCardUtil;
 import com.example.daoqimanagement.utils.ToastUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
@@ -132,6 +133,11 @@ public class StarFireCompleteInformationActivity extends AppCompatActivity imple
     Uri baseUriFront,baseUriReverse;
     String charsSmall,charsBig;
     Bitmap bitmapFront,bitmapReverse;
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -231,13 +237,13 @@ public class StarFireCompleteInformationActivity extends AppCompatActivity imple
                 String idCardVerso = pictureIdReverse;
                 if (TextUtils.isEmpty(idCard) || charsBig == null){
                     ToastUtils.showTextToast2(StarFireCompleteInformationActivity.this,"请输入身份证号码");
+                }else if (PersonIdCardUtil.isValidatedAllIdCard(idCard) == false){
+                    ToastUtils.showTextToast2(StarFireCompleteInformationActivity.this,"请输入正确身份证号码");
                 }else if(idCardPositive.equals("00000")){
                     ToastUtils.showTextToast2(StarFireCompleteInformationActivity.this,"请上传身份证正面照");
                 }else if(idCardVerso.equals("00001")){
                     ToastUtils.showTextToast2(StarFireCompleteInformationActivity.this,"请上传身份证反面照");
-                } else if (idCard.length() != 18){
-                    ToastUtils.showTextToast2(StarFireCompleteInformationActivity.this,"请输入正确身份证号码");
-                }else if (!TextUtils.isEmpty(idCard) && idCardPositive.equals("00000") == false && idCardVerso.equals("00001") == false && idCard.length() == 18){
+                } else if (!TextUtils.isEmpty(idCard) && idCardPositive.equals("00000") == false && idCardVerso.equals("00001") == false && PersonIdCardUtil.isValidatedAllIdCard(idCard) == true){
                     completeInfoPost(idCard,idCardPositive,idCardVerso);
                 }
 

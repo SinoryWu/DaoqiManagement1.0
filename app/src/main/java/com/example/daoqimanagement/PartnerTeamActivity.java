@@ -52,7 +52,11 @@ public class PartnerTeamActivity extends AppCompatActivity {
     DialogTokenIntent dialogTokenIntent = null;
     String delete = "no";
     private static final int REQUEST_CODE = 0x00000013;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -36,6 +36,7 @@ import com.example.daoqimanagement.utils.ActivityCollector;
 import com.example.daoqimanagement.utils.ActivityCollectorLogin;
 import com.example.daoqimanagement.utils.Api;
 import com.example.daoqimanagement.utils.L;
+import com.example.daoqimanagement.utils.PhoneFormatCheckUtils;
 import com.example.daoqimanagement.utils.ToastUtils;
 import com.google.gson.Gson;
 
@@ -163,27 +164,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_register_tv_getcode:
                 hideSoftKeyboard(view);
                 String registerAccount = mEtRegisterPhoneNumber.getText().toString().trim();
-                if (registerAccount.length() == 11) {
+
+                if (registerAccount.length() == 0){
+                    ToastUtils.showTextToast2(LoginActivity.this, "请输入手机号");
+                }else if (PhoneFormatCheckUtils.isPhoneLegal(registerAccount) == false){
+                    ToastUtils.showTextToast2(LoginActivity.this, "请输入正确的手机号");
+                }else if (PhoneFormatCheckUtils.isPhoneLegal(registerAccount) == true){
                     messagePost(registerAccount);
                     registerTime.start();
-                } else if (registerAccount.length() < 11 && registerAccount.length() > 0) {
-                    ToastUtils.showTextToast2(LoginActivity.this, "请输入正确手机号");
-                } else if (registerAccount.length() == 0) {
-                    ToastUtils.showTextToast2(LoginActivity.this, "请输入手机号");
                 }
 
                 break;
             case R.id.login_code_btn_catch_information:
                 hideSoftKeyboard(view);
                 String codeAccount = mEtCodeAccount.getText().toString().trim();
-                if (codeAccount.length() == 11) {
-                    messagePost(codeAccount);
-                    signInTime.start();
-                } else if (codeAccount.length() < 11 && codeAccount.length() > 0) {
-                    ToastUtils.showTextToast2(LoginActivity.this, "请输入正确手机号");
-                } else if (codeAccount.length() == 0) {
+
+                  if (codeAccount.length() == 0) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入手机号");
-                }
+                }else if (PhoneFormatCheckUtils.isPhoneLegal(codeAccount) == false) {
+                    ToastUtils.showTextToast2(LoginActivity.this, "请输入正确的手机号");
+                }else if (PhoneFormatCheckUtils.isPhoneLegal(codeAccount) == true) {
+                      messagePost(codeAccount);
+                      signInTime.start();
+                  }
 
                 break;
             case R.id.login_tv_register:
@@ -282,11 +285,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 } else if (mEtCodeAccount.length() <= 0) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入手机号");
-                } else if (mEtCodeCode.length() <= 0) {
+                }else if (PhoneFormatCheckUtils.isPhoneLegal(mEtCodeAccount.getText().toString()) == false){
+                    ToastUtils.showTextToast2(LoginActivity.this, "请输入正确的手机号");
+                }else if (mEtCodeCode.length() <= 0) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入验证码");
+
                 } else if (!mCbLoginCode.isChecked()) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请勾选同意并阅读《隐私声明》《用户协议》");
-                } else if (mEtCodeAccount != null && mEtCodeCode != null) {
+                } else if (mEtCodeAccount != null && mEtCodeCode != null && PhoneFormatCheckUtils.isPhoneLegal(mEtCodeAccount.getText().toString()) == true) {
                     loginCodePost(mEtCodeAccount.getText().toString().trim(), mEtCodeCode.getText().toString().trim(), "100d855909e9468b7e4");
 
                 }
@@ -299,11 +305,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 } else if (mEtPasswordAccount.length() <= 0) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入手机号");
+                } else if (PhoneFormatCheckUtils.isPhoneLegal(mEtPasswordAccount.getText().toString()) == false) {
+                    ToastUtils.showTextToast2(LoginActivity.this, "请输入正确的手机号");
                 } else if (mEtPasswordCode.length() <= 0) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入密码");
                 } else if (!mCbLoginPassword.isChecked()) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请勾选同意并阅读《隐私声明》《用户协议》");
-                } else if (mEtPasswordAccount != null && mEtPasswordCode != null) {
+                } else if (mEtPasswordAccount != null && mEtPasswordCode != null && mCbLoginPassword.isChecked() && PhoneFormatCheckUtils.isPhoneLegal(mEtPasswordAccount.getText().toString()) == true) {
                     loginPasswordPost(mEtPasswordAccount.getText().toString().trim(), mEtPasswordCode.getText().toString().trim(), "mEtPasswordCode");
                 }
 
@@ -325,6 +333,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入姓名");
                 } else if (mEtRegisterPhoneNumber.length() <= 0) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入手机号");
+                }else if (PhoneFormatCheckUtils.isPhoneLegal(mEtRegisterPhoneNumber.getText().toString())== false) {
+                    ToastUtils.showTextToast2(LoginActivity.this, "请输入正确的手机号");
                 } else if (mEtRegisterCode.length() <= 0) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入验证码");
                 } else if (mEtRegisterPassword.length() <= 0) {
@@ -335,7 +345,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     ToastUtils.showTextToast2(LoginActivity.this, "两次密码输入不一致");
                 } else if (!mCbLoginRegister.isChecked()) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请勾选阅读并同意《睡眠直营团队》");
-                } else if (mEtRegisterUserName != null && mEtRegisterPhoneNumber != null && mEtRegisterCode != null && mEtRegisterPassword != null && mEtRegisterConfirmPassword != null) {
+                } else if (mEtRegisterUserName != null && mEtRegisterPhoneNumber != null && mEtRegisterCode != null && mEtRegisterPassword != null && mEtRegisterConfirmPassword != null && PhoneFormatCheckUtils.isPhoneLegal(mEtRegisterPhoneNumber.getText().toString())== true) {
                     loginRegisterPost(String.valueOf(userType), mEtRegisterUserName.getText().toString().trim(), mEtRegisterPassword.getText().toString().trim(),
                             mEtRegisterPhoneNumber.getText().toString().trim(), mEtRegisterCode.getText().toString().trim(), "100d855909e9468b7e4");
                     Log.d("TAG", mEtRegisterPhoneNumber.getText().toString().trim());

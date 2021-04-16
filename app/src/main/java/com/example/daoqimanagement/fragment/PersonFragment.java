@@ -25,6 +25,7 @@ import com.android.library.YLCircleImageView;
 import com.bumptech.glide.Glide;
 import com.example.daoqimanagement.AddPrepareActivity;
 import com.example.daoqimanagement.EcologyCompleteInformationActivity;
+import com.example.daoqimanagement.FitActivity;
 import com.example.daoqimanagement.LoginActivity;
 import com.example.daoqimanagement.PayEarnestMoneyActivity;
 import com.example.daoqimanagement.PayJoinActivity;
@@ -68,7 +69,7 @@ public class PersonFragment extends Fragment {
 
     private YLCircleImageView mIvUserPortrait;
     private TextView mTvIdentify, mTvHospital, mTvContract,mTvModifyInformation,mTvModifyPassword,mTvAccountStatement,mTvSignOut
-            ,mTvTrueName,mTvUserType;
+            ,mTvTrueName,mTvUserType,mTvUserFit;
 
     DialogTokenIntent dialogTokenIntent = null;
     private PopupWindow popupWindow;
@@ -91,11 +92,31 @@ public class PersonFragment extends Fragment {
         mTvModifyInformation = view.findViewById(R.id.person_fragment_tv_modify_information);
         mTvModifyPassword = view.findViewById(R.id.person_fragment_tv_modify_password);
         mTvAccountStatement = view.findViewById(R.id.person_fragment_tv_account_statement);
+        mTvUserFit = view.findViewById(R.id.person_fragment_tv_account_fit);
+
         mTvSignOut = view.findViewById(R.id.person_fragment_tv_sign_out);
         mTvTrueName = view.findViewById(R.id.person_fragment_tv_user_name);
         mTvUserType = view.findViewById(R.id.person_fragment_tv_user_type);
         getUseInfoRes(Api.URL+"/v1/user/userInfo");
 
+        mTvModifyInformation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showTextToast2(getContext(),"该功能暂未开放");
+            }
+        });
+        mTvModifyPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showTextToast2(getContext(),"该功能暂未开放");
+            }
+        });
+        mTvAccountStatement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showTextToast2(getContext(),"该功能暂未开放");
+            }
+        });
         mTvSignOut.setOnClickListener(new OnMultiClickListener() {
             @Override
             public void onMultiClick(View view) {
@@ -109,7 +130,13 @@ public class PersonFragment extends Fragment {
                 }).show();
             }
         });
-
+        mTvUserFit.setOnClickListener(new OnMultiClickListener() {
+            @Override
+            public void onMultiClick(View view) {
+                Intent intent = new Intent(getContext(), FitActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

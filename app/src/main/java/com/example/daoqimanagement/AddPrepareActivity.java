@@ -83,7 +83,11 @@ public class AddPrepareActivity extends AppCompatActivity {
     String nature = "0";
     String areaName = "0";
     int hospitalid;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ActivityCollectorPrepare.addActivity(this);

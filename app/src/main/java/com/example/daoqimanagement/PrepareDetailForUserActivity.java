@@ -62,7 +62,11 @@ public class PrepareDetailForUserActivity extends AppCompatActivity {
     String prepareid,productId;
     int payProtect = 0;
     String payAmount = "";
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onStart() {
         super.onStart();
@@ -78,11 +82,7 @@ public class PrepareDetailForUserActivity extends AppCompatActivity {
         String hospitalName = intent.getStringExtra("hospitalName");
          prepareid = intent.getStringExtra("prepareId");
 
-        Log.d("preparedetail123123", GetSharePerfenceSP.getToken(this));
-        Log.d("preparedetail123123", GetSharePerfenceSP.getUid(this));
-        Log.d("preparedetail123123", GetSharePerfenceSP.getType(this));
-        Log.d("preparedetail123123", GetSharePerfenceSP.getUserType(this));
-        Log.d("preparedetail123123", prepareid);
+
         setContentView(R.layout.activity_prepare_detail_for_user);
         mTvHospitalName = findViewById(R.id.prepare_detail_user_tv_hospitalName);
         mTvLevel = findViewById(R.id.prepare_detail_user_tv_level);

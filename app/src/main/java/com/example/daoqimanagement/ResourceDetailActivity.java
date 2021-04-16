@@ -74,6 +74,11 @@ public class ResourceDetailActivity extends AppCompatActivity {
     String titleId;
     AlertDialog spotDialog;
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);

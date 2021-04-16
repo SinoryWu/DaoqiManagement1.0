@@ -138,7 +138,11 @@ public class EcologyCompleteInformationActivity extends AppCompatActivity implem
     Bitmap bitmapCamera,bitmapEntrust ;
 
     List<String> listPic = new ArrayList<>();
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

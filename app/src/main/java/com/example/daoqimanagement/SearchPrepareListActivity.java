@@ -44,7 +44,11 @@ public class SearchPrepareListActivity extends AppCompatActivity {
     DialogTokenIntent dialogTokenIntent = null;
     HomeFragmentHospitalPrepareListResponse.DataBeanX hospitalPrepareListDataBeanX = new HomeFragmentHospitalPrepareListResponse.DataBeanX();
     List<HomeFragmentHospitalPrepareListResponse.DataBeanX.DataBean> hospitalPrepareListDataBeans = new ArrayList<>();
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

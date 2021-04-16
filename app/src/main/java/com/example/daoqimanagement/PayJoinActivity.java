@@ -115,7 +115,11 @@ public class PayJoinActivity extends AppCompatActivity implements View.OnClickLi
     String pictureId = "00000";
 
     DialogTokenIntent dialogTokenIntent  = null;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

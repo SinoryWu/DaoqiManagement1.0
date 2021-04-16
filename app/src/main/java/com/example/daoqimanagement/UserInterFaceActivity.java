@@ -224,7 +224,7 @@ public class UserInterFaceActivity extends AppCompatActivity implements View.OnC
                 }
                 addFragment(mPersonFragment);
                 showFragment(mPersonFragment);
-                statusBarView.setVisibility(View.GONE);
+//                statusBarView.setVisibility(View.GONE);
                 statusBarView.setVisibility(View.VISIBLE);
                 mIvTabHome.setImageResource(R.mipmap.tab_home_false_icon);
                 mIvTabMentors.setImageResource(R.mipmap.tab_mentors_false_icon);
@@ -390,4 +390,9 @@ public class UserInterFaceActivity extends AppCompatActivity implements View.OnC
     }
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
 }

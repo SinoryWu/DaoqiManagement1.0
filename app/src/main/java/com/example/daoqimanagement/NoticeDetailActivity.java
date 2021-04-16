@@ -14,6 +14,12 @@ public class NoticeDetailActivity extends AppCompatActivity {
 
     private TextView mTvType,mTvCreateTime,mTvContent;
     private RelativeLayout mRlFinish;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

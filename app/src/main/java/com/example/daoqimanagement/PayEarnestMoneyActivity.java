@@ -112,7 +112,11 @@ public class PayEarnestMoneyActivity extends AppCompatActivity implements View.O
     String voucher = "00000";
     String type = "00000",prepareId="00000";
     int hospitalid;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

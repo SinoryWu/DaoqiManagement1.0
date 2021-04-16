@@ -14,7 +14,11 @@ import com.example.daoqimanagement.utils.OnMultiClickListener;
 
 public class PayJoinExamineActivity extends AppCompatActivity {
     private LinearLayout mLlArrowLeft;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

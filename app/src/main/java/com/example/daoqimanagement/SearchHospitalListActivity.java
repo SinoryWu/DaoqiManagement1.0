@@ -56,6 +56,11 @@ public class SearchHospitalListActivity extends AppCompatActivity {
     SearchHospitalListResponse.DataBeanX searchDataBeanX = new SearchHospitalListResponse.DataBeanX();
     List<SearchHospitalListResponse.DataBeanX.DataBean> searchDataBeans = new ArrayList<>();
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);

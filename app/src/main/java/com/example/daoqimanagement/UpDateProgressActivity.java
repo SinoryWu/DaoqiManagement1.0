@@ -151,6 +151,11 @@ public class UpDateProgressActivity extends AppCompatActivity {
     private View customViewChoiceHospital;
     private PopupWindow popupwindowChoiceHospital;
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);

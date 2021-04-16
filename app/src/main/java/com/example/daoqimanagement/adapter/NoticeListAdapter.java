@@ -42,7 +42,7 @@ public class NoticeListAdapter extends RecyclerView.Adapter<NoticeListAdapter.Vi
     public interface OnItemClickListener {
 
 
-        void onItemClick(String createTime,  String title,String content);
+        void onItemClick(String createTime,  String title,String content,int isRead,int noticeId);
     }
 
     public void setOnItemClickListener(NoticeListAdapter.OnItemClickListener listener){
@@ -149,7 +149,7 @@ public class NoticeListAdapter extends RecyclerView.Adapter<NoticeListAdapter.Vi
             itemView.setOnClickListener(new OnMultiClickListener() {
                 @Override
                 public void onMultiClick(View view) {
-                    mClickListener.onItemClick(createTime,dataBean.getTitle(),dataBean.getContent());
+                    mClickListener.onItemClick(createTime,dataBean.getTitle(),dataBean.getContent(),dataBean.getIsRead(),dataBean.getNoticeId());
                 }
             });
 

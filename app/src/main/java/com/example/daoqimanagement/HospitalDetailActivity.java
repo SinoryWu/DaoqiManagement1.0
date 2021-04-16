@@ -58,6 +58,12 @@ public class HospitalDetailActivity extends AppCompatActivity {
     HospitalDetailContactAdapter contactAdapter;
     DialogTokenIntent dialogTokenIntent = null;
     String phone;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

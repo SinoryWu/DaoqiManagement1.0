@@ -6,6 +6,7 @@
     <color name="colorBase">#f7f7f7</color>
     <color name="colorBlack">#000000</color>
     <color name="colorLoginBar">#3F2B4D</color>
+    <color name="colorSplashBar">#EBCA9F</color>
     <color name="colorFragmentBar">#FFFFFF</color>
     <color name="login_press_teamchange">#EEEEEE</color>
     <color name="login_unpress_teamchange">#f6f6f6</color>

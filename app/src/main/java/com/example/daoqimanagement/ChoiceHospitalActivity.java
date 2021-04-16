@@ -72,7 +72,11 @@ public class ChoiceHospitalActivity extends AppCompatActivity {
     String nature = "0";
     String areaName = "0";
     private RelativeLayout mRlChoiceConfirm, mRlSubmitFeedBack,mRlChoiceHospital,mRlFinish;
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
