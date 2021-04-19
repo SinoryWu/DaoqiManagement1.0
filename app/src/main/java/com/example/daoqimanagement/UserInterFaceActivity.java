@@ -257,7 +257,7 @@ public class UserInterFaceActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        currentFragment.onActivityResult(requestCode, resultCode, data);
+
     }
 
     /**
