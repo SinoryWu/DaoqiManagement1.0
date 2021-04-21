@@ -264,15 +264,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 hideSoftKeyboard(view);
                 break;
             case R.id.login_code_tv_private_link:
+                Intent intent1 = new Intent(this,PrivateLinkActivity.class);
+                startActivity(intent1);
                 hideSoftKeyboard(view);
                 break;
             case R.id.login_code_tv_user_agreement_link:
+                Intent intent2 = new Intent(this,UserLinkActivity.class);
+                startActivity(intent2);
                 hideSoftKeyboard(view);
                 break;
             case R.id.login_password_tv_private_link:
+                Intent intent3 = new Intent(this,PrivateLinkActivity.class);
+                startActivity(intent3);
                 hideSoftKeyboard(view);
                 break;
             case R.id.login_password_tv_user_agreement_link:
+                Intent intent4 = new Intent(this,UserLinkActivity.class);
+                startActivity(intent4);
                 hideSoftKeyboard(view);
                 break;
             case R.id.login_register_tv_private_link:
@@ -357,6 +365,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
                 break;
+
+
+
 
 
         }

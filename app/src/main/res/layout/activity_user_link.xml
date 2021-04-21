@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.daoqimanagement.viewmodel.TextViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        tools:context=".UserLinkActivity">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-21dp">
+            <RelativeLayout
+                android:id="@+id/private_link_rl_finish"
+                android:layout_width="70dp"
+                android:layout_height="58dp"
+                android:gravity="center"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()-> data.onFinish()}">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="18dp"
+                    android:src="@mipmap/arrow_left_black_icon" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:text="用户协议"
+                android:textColor="#ff4c5264"
+                android:textSize="17sp"
+                android:layout_centerHorizontal="true"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:layout_marginTop="78dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:id="@+id/private_link_tv_text"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:text="@{data.getTextUser()}"
+                        android:padding="12dp"/>
+
+
+
+                </RelativeLayout>
+
+
+            </ScrollView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+</layout>

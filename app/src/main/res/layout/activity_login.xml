@@ -28,11 +28,10 @@
                     android:src="@drawable/login_background" />
 
                 <ImageView
-                    android:layout_width="71dp"
-                    android:layout_height="22dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="171dp"
-                    android:layout_marginTop="42dp"
-                    android:src="@mipmap/bajie_icon" />
+                    android:layout_marginTop="42dp" />
 
                 <TextView
                     android:id="@+id/login_tv_sign"
