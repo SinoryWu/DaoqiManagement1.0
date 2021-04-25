@@ -650,7 +650,12 @@ public class PrepareDetailForUserActivity extends AppCompatActivity {
                                     scheduleListAdapter.setOnItemClickListener(new ScheduleListAdapter.OnItemClickListener() {
                                         @Override
                                         public void onItemClick(int scheduleId, int position) {
+                                            String s = String.valueOf(scheduleId);
 //                                            ToastUtils.showTextToast2(PrepareDetailForUserActivity.this, String.valueOf(scheduleId));
+
+                                            Intent intent = new Intent(PrepareDetailForUserActivity.this,ProgressDetailActivity.class);
+                                            intent.putExtra("scheduleId",s);
+                                            startActivity(intent);
                                         }
                                     });
                                 }

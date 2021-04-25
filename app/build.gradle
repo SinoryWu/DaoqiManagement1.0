@@ -24,8 +24,8 @@ android {
         }
 
         manifestPlaceholders = [
-                JPUSH_PKGNAME :applicationId,
-                JPUSH_APPKEY : "c4293dfd8f134584525266a0", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_PKGNAME : "com.example.daoqimanagement",
+                JPUSH_APPKEY : "471064af866345f2c236c054", //JPush 上注册的包名对应的 Appkey.
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
         ]
     }

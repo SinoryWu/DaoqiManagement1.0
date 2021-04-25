@@ -2,16 +2,28 @@ package com.example.daoqimanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationChannelGroup;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.provider.Settings;
+import android.provider.SyncStateContract;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -71,7 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private int isShowPassWordCard = 0;
     private EditText mEtCodeAccount, mEtCodeCode, mEtPasswordAccount, mEtPasswordCode, mEtRegisterUserName, mEtRegisterPhoneNumber, mEtRegisterCode, mEtRegisterPassword, mEtRegisterConfirmPassword;
     private CheckBox mCbLoginCode, mCbLoginPassword, mCbLoginRegister;
-
+    String regId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +91,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ActivityCollectorLogin.addActivity(this);
         ActivityCollector.addActivity(this);
         initView();
+
         mCvPassword.setVisibility(View.GONE);
         mCvRegister.setVisibility(View.GONE);
         registerLine.setVisibility(View.GONE);
@@ -104,11 +117,114 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mBtnCodeSign.setOnClickListener(this);
         mBtnPasswordSign.setOnClickListener(this);
         mBtnRegister.setOnClickListener(this);
-        String regId1 = JPushInterface.getRegistrationID(getApplicationContext());
-        Log.d("regId", regId1);
+         regId = JPushInterface.getRegistrationID(getApplicationContext());
+        Log.d("regId", regId);
 
     }
 
+    /**
+     * 检查有没有开启通知权限
+     */
+    public static boolean checkNotifaction(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //通过这个判断相应类别的权限是否打开
+            NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            //初次创建，解决安装App之后第一次进入通知权限页无类别选择
+            NotificationChannel channelfirst = new NotificationChannel(SyncStateContract.Constants._ID, context.getString(R.string.app_name) + "通知", NotificationManager.IMPORTANCE_HIGH);
+            manager.createNotificationChannel(channelfirst);
+
+            NotificationChannel channel = manager.getNotificationChannel(SyncStateContract.Constants._ID);
+
+            if (manager.areNotificationsEnabled()) {
+                if (channel == null || channel.getImportance() == NotificationManager.IMPORTANCE_NONE) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            //原检测方法
+            NotificationManagerCompat managers = NotificationManagerCompat.from(context);
+            return managers.areNotificationsEnabled();
+        }
+    }
+
+
+    /**
+     * 打开通知管理页面
+     *
+     * @param context
+     */
+    public static void gotoNotificationSetting(Context context) {
+        ApplicationInfo appInfo = context.getApplicationInfo();
+        String pkg = context.getPackageName();
+        int uid = appInfo.uid;
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                //通过这个判断相应类别的权限是否打开
+                NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                if (manager.areNotificationsEnabled()) {
+                    NotificationChannel channel = manager.getNotificationChannel(SyncStateContract.Constants._ID);
+                    if (channel.getImportance() == NotificationManager.IMPORTANCE_NONE) {
+                        //8.0以上跳转的
+                        Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
+                        intent.putExtra(Settings.EXTRA_APP_PACKAGE, context.getPackageName());
+                        intent.putExtra(Settings.EXTRA_CHANNEL_ID, SyncStateContract.Constants._ID);
+                        context.startActivity(intent);
+                    }
+                } else {
+                    Intent intent = new Intent();
+                    intent.setAction(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
+                    intent.putExtra(Settings.EXTRA_APP_PACKAGE, context.getPackageName());
+                    context.startActivity(intent);
+                }
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Intent intent = new Intent();
+                intent.setAction(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
+                //这种方案适用于 API21——25，即 5.0——7.1 之间的版本可以使用
+                intent.putExtra("app_package", pkg);
+                intent.putExtra("app_uid", uid);
+                context.startActivity(intent);
+            } else {
+                Intent intent = new Intent();
+                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                intent.setData(Uri.parse("package:" + pkg));
+                context.startActivity(intent);
+            }
+        } catch (Exception e) {
+
+            Intent intent = new Intent();
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            intent.addCategory(Intent.CATEGORY_DEFAULT);
+
+            intent.setData(Uri.parse("package:" + pkg));
+            context.startActivity(intent);
+//            //跳转手机设置页面
+//            Intent intent = new Intent(Settings.ACTION_SETTINGS);
+//            context.startActivity(intent);
+        }
+    }
+
+    private void goToSetting() {
+        Intent intent = new Intent();
+        if (Build.VERSION.SDK_INT >= 26) {// android 8.0引导
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+            intent.putExtra("android.provider.extra.EXTRA_CHANNEL_ID", "普通");
+        } else if (Build.VERSION.SDK_INT >= 21) { // android 5.0-7.0
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("app_package", getPackageName());
+            intent.putExtra("app_uid", getApplicationInfo().uid);
+        } else {//其它
+            intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.fromParts("package", getPackageName(), null));
+        }
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
     public void initView() {
         setContentView(R.layout.activity_login);
         mTvRegisterChangeTeam = findViewById(R.id.login_register_tv_change_team);
@@ -287,6 +403,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 hideSoftKeyboard(view);
                 break;
             case R.id.login_code_btn_login:
+
                 hideSoftKeyboard(view);
                 if (mEtCodeAccount.length() <= 0 && mEtCodeCode.length() <= 0) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请输入手机号和验证码");
@@ -301,7 +418,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } else if (!mCbLoginCode.isChecked()) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请勾选同意并阅读《隐私声明》《用户协议》");
                 } else if (mEtCodeAccount != null && mEtCodeCode != null && PhoneFormatCheckUtils.isPhoneLegal(mEtCodeAccount.getText().toString()) == true) {
-                    loginCodePost(mEtCodeAccount.getText().toString().trim(), mEtCodeCode.getText().toString().trim(), "100d855909e9468b7e4");
+                    loginCodePost(mEtCodeAccount.getText().toString().trim(), mEtCodeCode.getText().toString().trim(), regId);
 
                 }
 
@@ -320,7 +437,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } else if (!mCbLoginPassword.isChecked()) {
                     ToastUtils.showTextToast2(LoginActivity.this, "请勾选同意并阅读《隐私声明》《用户协议》");
                 } else if (mEtPasswordAccount != null && mEtPasswordCode != null && mCbLoginPassword.isChecked() && PhoneFormatCheckUtils.isPhoneLegal(mEtPasswordAccount.getText().toString()) == true) {
-                    loginPasswordPost(mEtPasswordAccount.getText().toString().trim(), mEtPasswordCode.getText().toString().trim(), "mEtPasswordCode");
+                    loginPasswordPost(mEtPasswordAccount.getText().toString().trim(), mEtPasswordCode.getText().toString().trim(), regId);
                 }
 
 
@@ -355,7 +472,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     ToastUtils.showTextToast2(LoginActivity.this, "请勾选阅读并同意《睡眠直营团队》");
                 } else if (mEtRegisterUserName != null && mEtRegisterPhoneNumber != null && mEtRegisterCode != null && mEtRegisterPassword != null && mEtRegisterConfirmPassword != null && PhoneFormatCheckUtils.isPhoneLegal(mEtRegisterPhoneNumber.getText().toString())== true) {
                     loginRegisterPost(String.valueOf(userType), mEtRegisterUserName.getText().toString().trim(), mEtRegisterPassword.getText().toString().trim(),
-                            mEtRegisterPhoneNumber.getText().toString().trim(), mEtRegisterCode.getText().toString().trim(), "100d855909e9468b7e4");
+                            mEtRegisterPhoneNumber.getText().toString().trim(), mEtRegisterCode.getText().toString().trim(), regId);
                     Log.d("TAG", mEtRegisterPhoneNumber.getText().toString().trim());
                     Log.d("TAG", mEtRegisterCode.getText().toString().trim());
                     Log.d("TAG", String.valueOf(userType));
@@ -372,6 +489,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         }
     }
+
+
+
 
 
     public void initPopupWindowView() {
