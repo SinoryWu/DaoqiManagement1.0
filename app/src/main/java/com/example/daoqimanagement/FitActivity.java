@@ -75,6 +75,7 @@ public class FitActivity extends AppCompatActivity {
                                 spotDialog.dismiss();
                                 ToastUtils.showTextToast2(FitActivity.this, "清除完成");
 
+
                             }
                         },1500); // 延时1.5秒
 
