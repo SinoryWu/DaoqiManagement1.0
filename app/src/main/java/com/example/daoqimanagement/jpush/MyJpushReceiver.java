@@ -20,6 +20,7 @@ import androidx.core.app.NotificationCompat;
 import com.example.daoqimanagement.AddPrepareActivity;
 import com.example.daoqimanagement.R;
 import com.example.daoqimanagement.UserInterFaceActivity;
+import com.example.daoqimanagement.utils.ActivityCollector;
 import com.example.daoqimanagement.utils.GetSharePerfenceSP;
 
 import cn.jpush.android.api.CmdMessage;
@@ -125,6 +126,7 @@ public class MyJpushReceiver  extends JPushMessageReceiver {
             i.putExtras(bundle);
             //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP );
+            ActivityCollector.finishAll();
             context.startActivity(i);
 
         }catch (Throwable throwable){
