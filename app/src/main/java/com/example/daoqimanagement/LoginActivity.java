@@ -400,6 +400,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 hideSoftKeyboard(view);
                 break;
             case R.id.login_register_tv_private_link:
+                Intent intent5 = new Intent(this,UserLinkActivity.class);
+                startActivity(intent5);
                 hideSoftKeyboard(view);
                 break;
             case R.id.login_code_btn_login:
