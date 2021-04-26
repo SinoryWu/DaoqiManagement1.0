@@ -119,6 +119,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mBtnRegister.setOnClickListener(this);
          regId = JPushInterface.getRegistrationID(getApplicationContext());
         Log.d("regId", regId);
+//        ToastUtils.showTextToast2(this,regId);
 
     }
 
@@ -261,7 +262,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mEtRegisterCode = findViewById(R.id.login_register_et_code);
         mEtRegisterPassword = findViewById(R.id.login_register_et_password);
         mEtRegisterConfirmPassword = findViewById(R.id.login_register_et_confirm_password);
+
+
     }
+
+
 
     @Override
     public void onClick(View view) {

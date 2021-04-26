@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ import com.example.daoqimanagement.utils.ClearCacheUtils;
 import com.example.daoqimanagement.utils.GetSharePerfenceSP;
 import com.example.daoqimanagement.utils.OnMultiClickListener;
 import com.example.daoqimanagement.utils.ToastUtils;
+import com.example.daoqimanagement.utils.osHelperUtils;
 
 import dmax.dialog.SpotsDialog;
 
@@ -26,6 +29,7 @@ public class FitActivity extends AppCompatActivity {
     private TextView mTvDeleteCache,mTvToast;
     private RelativeLayout mRlFinish;
     AlertDialog spotDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +42,14 @@ public class FitActivity extends AppCompatActivity {
         mTvToast.setOnClickListener(new OnMultiClickListener() {
             @Override
             public void onMultiClick(View view) {
+//                goToSetting();
+//                gotoNotificationSetting();
 
-                gotoNotificationSetting();
+               if (osHelperUtils.getOsType(getApplicationContext(),"ro.build.version.emui").length() > 0){
+                   gotoNotificationSetting();
+               }else {
+                   goToSetting();
+               }
 
             }
         });
@@ -86,6 +96,24 @@ public class FitActivity extends AppCompatActivity {
         });
     }
 
+
+    private void goToSetting() {
+        Intent intent = new Intent();
+        if (Build.VERSION.SDK_INT >= 26) {// android 8.0引导
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+            intent.putExtra("android.provider.extra.EXTRA_CHANNEL_ID", "普通");
+        } else if (Build.VERSION.SDK_INT >= 21) { // android 5.0-7.0
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("app_package", getPackageName());
+            intent.putExtra("app_uid", getApplicationInfo().uid);
+        } else {//其它
+            intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.fromParts("package", getPackageName(), null));
+        }
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
     //跳转到通知管理
     public void gotoNotificationSetting() {
